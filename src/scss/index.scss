@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Arvo');
 @import '~bootstrap/scss/bootstrap-grid';
+@import 'button';
 @import 'header';
 body {
   margin: 0;
@@ -23,3 +24,22 @@ ul {
     margin: 0 auto;
   }
 
+  &.contact-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    li {
+      margin: 0 15px;
+    }
+
+    @include media-breakpoint-up(sm) {
+      flex-direction: row;
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+}
