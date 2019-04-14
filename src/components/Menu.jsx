@@ -3,6 +3,27 @@ import React, { Component } from 'react';
 import { GearIcon } from '../components/icons';
 
 class Menu extends Component {
+  clickHandler = e => {
+    e.stopPropagation();
+
+    if (!this.state.open) {
+      this.openNav();
+    } else {
+      this.closeNav();
+    }
+  };
+  openNav = () => {
+    this.setState({
+      open: true
+    });
+  };
+
+  closeNav = () => {
+    this.setState({
+      open: false
+    });
+  };
+
   render() {
     return (
       <>
