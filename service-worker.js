@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/matt-coleman.co.uk/precache-manifest.991c112122574867cf01a0bf64a4815d.js"
+  "/matt-coleman.co.uk/precache-manifest.91b24402a8cfce85c71be08ace315a25.js"
 );
 
 workbox.clientsClaim();
