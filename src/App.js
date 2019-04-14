@@ -2,9 +2,15 @@ import React, { Component } from 'react';
 import Particles from 'react-particles-js';
 
 import Header from './components/Header';
+import Menu from './components/Menu';
 import { CodepenIcon, EmailIcon, GithubIcon } from './components/icons';
 
 class App extends Component {
+  handleColorChange = color => {
+    document.body.classList = '';
+    document.body.classList.add(color);
+  };
+
   render() {
     return (
       <div className="container">
@@ -63,6 +69,7 @@ class App extends Component {
             </ul>
           </div>
         </div>
+        <Menu onSelectColor={this.handleColorChange} />
       </div>
     );
   }

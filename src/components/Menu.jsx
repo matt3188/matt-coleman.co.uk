@@ -3,6 +3,11 @@ import React, { Component } from 'react';
 import { GearIcon } from '../components/icons';
 
 class Menu extends Component {
+  state = {
+    open: false,
+    colorPicked: 'color-1'
+  };
+
   clickHandler = e => {
     e.stopPropagation();
 
@@ -12,6 +17,16 @@ class Menu extends Component {
       this.closeNav();
     }
   };
+
+  handleColorChange = e => {
+    let colorPicked = e.target.className;
+    this.setState({
+      colorPicked: colorPicked
+    });
+    this.props.onSelectColor(colorPicked);
+    this.closeNav();
+  };
+
   openNav = () => {
     this.setState({
       open: true
