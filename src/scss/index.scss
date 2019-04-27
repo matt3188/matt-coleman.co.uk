@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Arvo');
 @import '~bootstrap/scss/bootstrap-grid';
 
+@import 'variables';
 @import 'page-transition';
 @import 'button';
 @import 'header';
+@import 'nav';
 @import 'menu';
 
 body {
@@ -28,7 +30,7 @@ ul {
     margin: 0 auto;
   }
 
-  &.contact-list {
+  &.horizontal-list {
     display: flex;
     justify-content: center;
     align-items: center;
