@@ -9,6 +9,11 @@ const Navigation = () => (
           Home
         </NavLink>
       </li>
+      <li>
+        <NavLink activeClassName="is-active" to="/my-cv">
+          My CV
+        </NavLink>
+      </li>
     </ul>
   </nav>
 );
