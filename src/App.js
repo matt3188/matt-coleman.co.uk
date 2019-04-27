@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Particles from 'react-particles-js';
 
 import Header from './components/Header';
+import Container from './components/Container';
 import ColourSelect from './components/ColourSelect';
 
 class App extends Component {
@@ -38,6 +39,7 @@ class App extends Component {
         />
         <Header />
 
+        <Container />
 
         <ColourSelect onSelectColor={this.handleColorChange} />
       </Router>
