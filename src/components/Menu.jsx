@@ -16,9 +16,11 @@ class Menu extends Component {
   };
 
   componentDidMount() {
+    this.prevColour = JSON.parse(localStorage.getItem('colour')) || this.state.colours[0].hex;
     this.setState({
-      colourPicked: this.state.colours[0].hex
+      colourPicked: this.prevColour
     });
+    document.body.style.backgroundColor = this.prevColour;
   }
 
   clickHandler = () => {
@@ -34,7 +36,9 @@ class Menu extends Component {
     this.setState({
       colourPicked: colourPicked
     });
+
     this.props.onSelectColor(colourPicked);
+    localStorage.setItem('colour', JSON.stringify(colourPicked));
     this.closeNav();
   };
 
