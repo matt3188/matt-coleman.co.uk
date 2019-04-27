@@ -2,7 +2,7 @@
   "name": "matt-coleman.co.uk",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://matt3188.github.io/matt-coleman.co.uk",
+  "homepage": "https://matt-coleman.co.uk",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "node-sass": "^4.11.0",
