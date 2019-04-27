@@ -4,6 +4,7 @@ import Particles from 'react-particles-js';
 import Header from './components/Header';
 import Menu from './components/Menu';
 import { CodepenIcon, EmailIcon, GithubIcon, LinkedInIcon } from './components/icons';
+import ColourSelect from './components/ColourSelect';
 
 class App extends Component {
   handleColorChange = color => {
@@ -39,6 +40,7 @@ class App extends Component {
         <div className="row">
           <Header />
 
+        <ColourSelect onSelectColor={this.handleColorChange} />
     );
   }
 }
