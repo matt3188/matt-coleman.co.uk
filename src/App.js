@@ -7,8 +7,8 @@ import { CodepenIcon, EmailIcon, GithubIcon, LinkedInIcon } from './components/i
 
 class App extends Component {
   handleColorChange = color => {
-    document.body.classList = '';
-    document.body.classList.add(color);
+    document.body.style.backgroundColor = '';
+    document.body.style.backgroundColor = color;
   };
 
   render() {

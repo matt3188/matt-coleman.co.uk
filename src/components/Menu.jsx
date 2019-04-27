@@ -5,12 +5,23 @@ import { GearIcon } from '../components/icons';
 class Menu extends Component {
   state = {
     open: false,
-    colorPicked: 'color-1'
+    colourPicked: '',
+    colours: [
+      { id: 1, hex: '#0e83cd' },
+      { id: 2, hex: '#f06060' },
+      { id: 3, hex: '#fcd04b' },
+      { id: 4, hex: '#2ecc71' },
+      { id: 5, hex: '#9e54bd' }
+    ]
   };
 
-  clickHandler = e => {
-    e.stopPropagation();
+  componentDidMount() {
+    this.setState({
+      colourPicked: this.state.colours[0].hex
+    });
+  }
 
+  clickHandler = () => {
     if (!this.state.open) {
       this.openNav();
     } else {
@@ -19,11 +30,11 @@ class Menu extends Component {
   };
 
   handleColorChange = e => {
-    let colorPicked = e.target.className;
+    let colourPicked = e.target.style.backgroundColor;
     this.setState({
-      colorPicked: colorPicked
+      colourPicked: colourPicked
     });
-    this.props.onSelectColor(colorPicked);
+    this.props.onSelectColor(colourPicked);
     this.closeNav();
   };
 
@@ -40,29 +51,23 @@ class Menu extends Component {
   };
 
   render() {
+    this.colourList = this.state.colours.map(colour => (
+      <li key={colour.hex} className="color">
+        <button
+          className={`color-${colour.id}`}
+          style={{ backgroundColor: colour.hex }}
+          onClick={this.handleColorChange}
+        />
+      </li>
+    ));
+
     return (
       <>
         <button className="btn btn-menu-trigger" onClick={this.clickHandler}>
-          <GearIcon class={this.state.colorPicked} width={40} height={40} />
+          <GearIcon fill={this.state.colourPicked} width={40} height={40} />
         </button>
         <div className={`wrapper ${this.state.open ? 'is-active' : ''}`}>
-          <ul className="color-list">
-            <li className="color">
-              <button className="color-1" onClick={this.handleColorChange} />
-            </li>
-            <li className="color">
-              <button className="color-2" onClick={this.handleColorChange} />
-            </li>
-            <li className="color">
-              <button className="color-3" onClick={this.handleColorChange} />
-            </li>
-            <li className="color">
-              <button className="color-4" onClick={this.handleColorChange} />
-            </li>
-            <li className="color">
-              <button className="color-5" onClick={this.handleColorChange} />
-            </li>
-          </ul>
+          <ul className="color-list">{this.colourList}</ul>
         </div>
         <div className={`overlay ${this.state.open ? 'is-active' : ''}`} />
       </>
