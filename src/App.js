@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Particles from 'react-particles-js';
 
 import Header from './components/Header';
@@ -12,7 +13,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
+      <Router>
         <Particles
           className="particles"
           params={{
@@ -35,10 +36,11 @@ class App extends Component {
           }}
           style={{ position: 'fixed', width: '100vw', height: '100vh', left: 0, top: 0 }}
         />
-        <div className="row">
-          <Header />
+        <Header />
+
 
         <ColourSelect onSelectColor={this.handleColorChange} />
+      </Router>
     );
   }
 }
