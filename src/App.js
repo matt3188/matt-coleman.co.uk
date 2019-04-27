@@ -3,7 +3,7 @@ import Particles from 'react-particles-js';
 
 import Header from './components/Header';
 import Menu from './components/Menu';
-import { CodepenIcon, EmailIcon, GithubIcon } from './components/icons';
+import { CodepenIcon, EmailIcon, GithubIcon, LinkedInIcon } from './components/icons';
 
 class App extends Component {
   handleColorChange = color => {
@@ -59,6 +59,16 @@ class App extends Component {
                   rel="noopener noreferrer"
                 >
                   <CodepenIcon fill="#fff" width={50} height={50} />
+                </a>
+              </li>
+              <li>
+                <a
+                  className="btn btn--has-border"
+                  href="https://www.linkedin.com/in/matt-coleman-a178783a"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <LinkedInIcon fill="#fff" width={45} height={45} />
                 </a>
               </li>
               <li>
