@@ -73,7 +73,7 @@ class ColourSelect extends Component {
         <div className={`wrapper ${this.state.open ? 'is-active' : ''}`}>
           <ul className="color-list">{this.colourList}</ul>
         </div>
-        <div className={`overlay ${this.state.open ? 'is-active' : ''}`} />
+        <div onClick={this.closeNav} className={`overlay ${this.state.open ? 'is-active' : ''}`} />
       </>
     );
   }

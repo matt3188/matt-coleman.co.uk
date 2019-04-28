@@ -14,7 +14,7 @@
     height: 100%;
     z-index: -1;
     width: 0;
-    transition: 0.3s width ease-in-out;
+    transition: width $transition-speed $transition-timing;
   }
 
   &__percentage,
