@@ -2,7 +2,7 @@ import React from 'react';
 import { CodepenIcon, EmailIcon, GithubIcon, LinkedInIcon } from './icons';
 
 const ContactList = () => (
-  <ul className="horizontal-list">
+  <ul className="list horizontal-list contact-list">
     <li>
       <a className="btn btn--has-border" href="https://github.com/matt3188" target="_blank" rel="noopener noreferrer">
         <GithubIcon fill="#fff" width={50} height={50} />
