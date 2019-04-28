@@ -4,6 +4,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import Home from './Home';
 import Cv from './Cv';
+import Four0Four from './404';
 
 const Container = ({ location }) => {
   return (
