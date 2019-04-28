@@ -15,6 +15,7 @@ const Container = ({ location }) => {
             <Switch location={location}>
               <Route exact path="/" component={Home} />
               <Route exact path="/my-cv" component={Cv} />
+              <Route component={Four0Four} />
             </Switch>
           </section>
         </CSSTransition>
