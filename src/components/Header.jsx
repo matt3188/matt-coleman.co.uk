@@ -1,12 +1,13 @@
 import React from 'react';
 
+import Navigation from './Navigation';
+
 const Header = () => (
-  <div className="col-md-12">
-    <div className="header text-center">
-      <h1 className="heading">Matt Coleman</h1>
-      <p>Front end Developer</p>
-    </div>
-  </div>
+  <header className="header text-center">
+    <Navigation />
+    <h1 className="heading">Matt Coleman</h1>
+    <p>Front end Developer</p>
+  </header>
 );
 
 export default Header;

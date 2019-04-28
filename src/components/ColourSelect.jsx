@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import { GearIcon } from '../components/icons';
+import { GearIcon } from './icons';
 
-class Menu extends Component {
+class ColourSelect extends Component {
   state = {
     open: false,
     colourPicked: '',
@@ -73,10 +73,10 @@ class Menu extends Component {
         <div className={`wrapper ${this.state.open ? 'is-active' : ''}`}>
           <ul className="color-list">{this.colourList}</ul>
         </div>
-        <div className={`overlay ${this.state.open ? 'is-active' : ''}`} />
+        <div onClick={this.closeNav} className={`overlay ${this.state.open ? 'is-active' : ''}`} />
       </>
     );
   }
 }
 
-export default Menu;
+export default ColourSelect;

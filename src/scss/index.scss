@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Arvo');
 @import '~bootstrap/scss/bootstrap-grid';
+
+@import 'variables';
+@import 'page-transition';
+@import 'typography';
 @import 'button';
 @import 'header';
+@import 'nav';
 @import 'menu';
+@import 'skill';
 
 body {
   margin: 0;
@@ -12,6 +18,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #0e83cd;
+  color: $white;
 }
 
 ul {
@@ -26,7 +33,7 @@ ul {
     margin: 0 auto;
   }
 
-  &.contact-list {
+  &.horizontal-list {
     display: flex;
     justify-content: center;
     align-items: center;

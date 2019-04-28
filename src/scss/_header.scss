@@ -1,6 +1,10 @@
 .header {
-  color: #fff;
+  color: $white;
   padding: 20px;
+
+  @include media-breakpoint-up(sm) {
+    margin-top: 38px;
+  }
 
   .heading {
     margin-bottom: 0;
