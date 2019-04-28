@@ -2,8 +2,8 @@ import React from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
-import Home from '../components/Home';
-import Cv from '../components/Cv';
+import Home from './Home';
+import Cv from './Cv';
 
 const Container = ({ location }) => {
   return (

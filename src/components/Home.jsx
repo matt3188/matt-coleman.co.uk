@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ContactList from '../components/ContactList';
+import ContactList from './ContactList';
 
 const Home = () => (
   <div className="row">
