@@ -9,6 +9,7 @@
 
   @include media-breakpoint-down(sm) {
     opacity: 0;
+    pointer-events: none;
   }
 
   .horizontal-list {
@@ -24,6 +25,7 @@
   &.is-active {
     opacity: 1;
     z-index: 12;
+    pointer-events: all;
   }
 
   a {
