@@ -1,15 +1,40 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Matt Coleman",
+  "name": "Matt Coleman - Front end developer",
   "icons": [
     {
+      "src": "favicon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
       "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "64x64 48x48 32x32 24x24 16x16",
       "type": "image/x-icon"
+    },
+    {
+      "src": "/images/touch/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/touch/android-chrome-256x256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "/images/touch/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "/images/touch/mstile-150x150.png",
+      "type": "image/png",
+      "sizes": "150x150"
     }
   ],
-  "start_url": ".",
+  "start_url": "https://matt-coleman.co.uk",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#0e83cd",
+  "background_color": "#0e83cd"
 }

@@ -37,14 +37,27 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 
-    li {
-      margin: 0 15px;
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
     }
 
     @include media-breakpoint-up(sm) {
+      li {
+        margin: 0 15px;
+      }
+    }
+  }
+
+  &.contact-list {
+    @include media-breakpoint-down(sm) {
+      flex-wrap: wrap;
       flex-direction: row;
+
+      li {
+        flex: 0 0 50%;
+        margin: 0 0 15px;
+      }
     }
   }
 }
