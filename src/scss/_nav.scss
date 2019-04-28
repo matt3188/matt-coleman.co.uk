@@ -4,7 +4,23 @@
   top: 0;
   left: 0;
   right: 0;
-  box-shadow: 6px 4px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: $box-shadow;
+  transition: opacity $transition-speed $transition-timing;
+
+  @include media-breakpoint-down(sm) {
+    opacity: 0;
+  }
+
+  .horizontal-list {
+    @include media-breakpoint-down(sm) {
+      height: 100vh;
+    }
+  }
+
+  &.is-active {
+    opacity: 1;
+    z-index: 11;
+  }
 
   a {
     padding: 10px;
@@ -16,20 +32,70 @@
     &:after {
       content: '';
       opacity: 0;
-      transition: opacity 0.3s ease-in;
+      transition: opacity $transition-speed $transition-timing;
       width: 100%;
       height: 3px;
     }
 
-    &.is-active,
-    &:hover {
+    @include media-breakpoint-up(sm) {
+      &.is-active,
+      &:hover {
+        &:after {
+          background-color: $emperor-grey;
+          opacity: 1;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+.nav__mobile-menu-toggle {
+  display: none;
+
+  @include media-breakpoint-down(sm) {
+    display: block;
+    width: 20px;
+    height: 10px;
+    position: relative;
+    float: right;
+    z-index: 12;
+
+    &:before {
+      top: 0;
+      transform-origin: left;
+    }
+
+    &:after {
+      bottom: 0;
+      transform-origin: right;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 20px;
+      height: 2px;
+      background-color: $white;
+      transition: transform $transition-speed $transition-timing;
+    }
+
+    &.is-active {
+      &:before,
       &:after {
         background-color: $emperor-grey;
-        opacity: 1;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
+      }
+
+      &:before {
+        transform: rotate(45deg);
+      }
+      &:after {
+        transform: rotate(-45deg) translateY(-8px);
       }
     }
   }
