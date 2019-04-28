@@ -10,7 +10,7 @@ script:
 
 branches:
   only:
-    - develop
+    - master
 
 deploy:
   provider: pages
@@ -19,4 +19,4 @@ deploy:
   keep_history: true
   local_dir: 'build'
   on:
-    all_branches: develop
+    all_branches: master
