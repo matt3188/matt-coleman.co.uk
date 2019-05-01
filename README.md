@@ -4,5 +4,5 @@
 
 - ~~Add GA & GTM~~
 - ~~Add persistant state to store user colour choice~~
-- Add React Router
-- Add iOS home screen icons
+- ~Add React Router~
+- ~Add iOS home screen icons~
