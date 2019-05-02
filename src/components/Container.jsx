@@ -4,7 +4,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import Home from './Home';
 import Cv from './Cv';
-import Four0Four from './404';
+import NotFoundPage from './NotFoundPage';
 
 const Container = ({ location }) => {
   return (
@@ -15,7 +15,7 @@ const Container = ({ location }) => {
             <Switch location={location}>
               <Route exact path="/" component={Home} />
               <Route exact path="/my-cv" component={Cv} />
-              <Route component={Four0Four} />
+              <Route component={NotFoundPage} />
             </Switch>
           </section>
         </CSSTransition>
