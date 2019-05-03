@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { GearIcon } from './icons';
+import { GearIcon } from 'components/icons';
 
 class ColourSelect extends Component {
   state = {
