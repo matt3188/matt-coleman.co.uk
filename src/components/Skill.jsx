@@ -4,6 +4,7 @@ class Skill extends React.Component {
   state = {
     percentage: ''
   };
+
   componentDidMount() {
     setTimeout(() => {
       this.setState({
@@ -11,6 +12,7 @@ class Skill extends React.Component {
       });
     }, this.props.delay);
   }
+
   render() {
     return (
       <div className="skill">

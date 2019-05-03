@@ -1,5 +1,6 @@
 import React from 'react';
-import { CodepenIcon, EmailIcon, GithubIcon, LinkedInIcon } from './icons';
+
+import { CodepenIcon, EmailIcon, GithubIcon, LinkedInIcon } from 'components/icons';
 
 const ContactList = () => (
   <ul className="list horizontal-list contact-list">

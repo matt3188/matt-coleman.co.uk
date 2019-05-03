@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ContactList from './ContactList';
+import ContactList from 'components/ContactList';
 
 const Home = () => (
   <div className="row">
@@ -9,4 +9,5 @@ const Home = () => (
     </div>
   </div>
 );
+
 export default Home;

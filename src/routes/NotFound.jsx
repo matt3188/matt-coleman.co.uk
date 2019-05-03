@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Four0Four = () => (
+const NotFound = () => (
   <div className="row">
     <div className="col text-center">
       <h1 className="heading">404</h1>
@@ -9,4 +9,4 @@ const Four0Four = () => (
   </div>
 );
 
-export default Four0Four;
+export default NotFound;

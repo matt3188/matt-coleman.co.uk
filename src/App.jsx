@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Particles from 'react-particles-js';
 
-import Header from './components/Header';
-import Container from './components/Container';
-import ColourSelect from './components/ColourSelect';
+import Header from 'components/Header';
+import Container from 'components/Container';
+import ColourSelect from 'components/ColourSelect';
 
 class App extends Component {
   handleColorChange = color => {
