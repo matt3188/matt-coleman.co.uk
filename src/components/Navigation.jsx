@@ -1,7 +1,14 @@
+// @flow
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-class Navigation extends React.Component {
+type Props = {};
+
+type State = {
+  navOpen: boolean
+};
+
+class Navigation extends React.Component<Props, State> {
   state = {
     navOpen: false
   };
