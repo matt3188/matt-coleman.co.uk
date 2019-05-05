@@ -1,6 +1,17 @@
+// @flow
 import React from 'react';
 
-class Skill extends React.Component {
+type Props = {
+  percentage: string,
+  delay: number,
+  label: string
+};
+
+type State = {
+  percentage: string
+};
+
+class Skill extends React.Component<Props, State> {
   state = {
     percentage: ''
   };
