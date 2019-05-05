@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { GearIcon } from 'components/icons';
+import Icon from 'components/Icon';
 
 class ColourSelect extends Component {
   state = {
@@ -68,7 +68,7 @@ class ColourSelect extends Component {
     return (
       <>
         <button className="btn btn-menu-trigger" onClick={this.clickHandler}>
-          <GearIcon fill={this.state.colourPicked} width={40} height={40} />
+          <Icon name="gear" fill={this.state.colourPicked} width={40} height={40} viewBox="0 0 14 16" />
         </button>
         <div className={`wrapper ${this.state.open ? 'is-active' : ''}`}>
           <ul className="color-list">{this.colourList}</ul>
