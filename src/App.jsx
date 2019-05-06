@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Particles from 'react-particles-js';
