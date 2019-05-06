@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 
 import Skill from 'components/Skill';
@@ -30,7 +31,7 @@ const Cv = () => (
     </p>
 
     <div className="skill-container">
-      {skills.map((skill, i) => (
+      {skills.map((skill: Object, i: number) => (
         <Skill key={skill.label} label={skill.label} percentage={skill.percentage} delay={250 * i} />
       ))}
     </div>

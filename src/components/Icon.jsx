@@ -5,7 +5,7 @@ type Props = {
   name: string,
   width: number,
   height: number,
-  viewBox: String,
+  viewBox: string,
   fill: string
 };
 

@@ -1,8 +1,21 @@
+// @flow
 import React, { Component } from 'react';
 
 import Icon from 'components/Icon';
 
-class ColourSelect extends Component {
+type Props = {
+  onSelectColor: Function
+};
+
+type State = {
+  open: boolean,
+  colourPicked: string,
+  colours: Array<{ id: number, hex: string }>
+};
+
+class ColourSelect extends Component<Props, State> {
+  prevColour: string;
+
   state = {
     open: false,
     colourPicked: '',
@@ -15,12 +28,19 @@ class ColourSelect extends Component {
     ]
   };
 
+  getStoredItem = (item: string) => {
+    return JSON.parse(localStorage.getItem(item));
+  };
+
   componentDidMount() {
-    this.prevColour = JSON.parse(localStorage.getItem('colour')) || this.state.colours[0].hex;
+    this.prevColour = this.getStoredItem('colour') || this.state.colours[0].hex;
     this.setState({
       colourPicked: this.prevColour
     });
-    document.body.style.backgroundColor = this.prevColour;
+
+    if (document.body) {
+      document.body.style.backgroundColor = this.prevColour;
+    }
   }
 
   clickHandler = () => {
@@ -31,7 +51,7 @@ class ColourSelect extends Component {
     }
   };
 
-  handleColorChange = e => {
+  handleColorChange = (e: Event) => {
     let colourPicked = e.target.style.backgroundColor;
     this.setState({
       colourPicked: colourPicked
@@ -55,7 +75,7 @@ class ColourSelect extends Component {
   };
 
   render() {
-    this.colourList = this.state.colours.map(colour => (
+    this.colourList = this.state.colours.map((colour: { id: number, hex: string }) => (
       <li key={colour.hex} className="color">
         <button
           className={`color-${colour.id}`}
