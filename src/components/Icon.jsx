@@ -6,10 +6,14 @@ type Props = {
   width: number,
   height: number,
   viewBox: string,
-  fill: string
+  fill?: string
 };
 
 class Icon extends React.Component<Props> {
+  static defaultProps = {
+    fill: '#FFF'
+  };
+
   render() {
     let code = '';
 
