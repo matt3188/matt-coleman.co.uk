@@ -1,17 +1,27 @@
 <template>
   <div id="app">
-    <Routes />
-    <router-view />
+    <Navigation />
+    <transition name="overlay-left-full" mode="out-in">
+      <router-view class="page-view" />
+    </transition>
+    <div class="overlay-right"></div>
+    <div class="overlay-left"></div>
   </div>
 </template>
 
 <script>
-import Routes from '@/components/Routes.vue';
+import Navigation from '@/components/Navigation.vue';
 
 export default {
   name: 'App',
   components: {
-    Routes,
+    Navigation,
+  },
+  created() {
+    this.$router.beforeEach((to, from, next) => {
+      this.transition = to.meta.transition;
+      next();
+    });
   },
 };
 </script>
@@ -23,5 +33,20 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+.overlay-left,
+.overlay-right {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 0;
+  background: #1867c0;
+  transition-duration: 0.3s;
+}
+.overlay-left {
+  right: 0;
+}
+.overlay-right {
+  left: 0;
 }
 </style>

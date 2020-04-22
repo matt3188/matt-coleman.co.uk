@@ -1,8 +1,10 @@
 <template>
   <nav class="router">
     <ul class="router__list">
-      <li v-for="(route, index) in routes" v-bind:key="index">
-        <router-link class="router__link" :to="route.path">{{ route.name }}</router-link>
+      <li v-for="(route, index) in activeRoutes" v-bind:key="index">
+        <router-link class="router__link" :to="route.path">
+          {{ route.name }}
+        </router-link>
       </li>
     </ul>
   </nav>
@@ -11,8 +13,17 @@
 <script>
 export default {
   name: 'Routes',
-  beforeMount() {
-    this.routes = this.$router.options.routes;
+  data() {
+    return {
+      routes: this.$router.options.routes,
+    };
+  },
+  computed: {
+    activeRoutes() {
+      return this.routes.filter((route) => {
+        return route.name;
+      });
+    },
   },
 };
 </script>
@@ -22,6 +33,7 @@ export default {
   &__list {
     display: flex;
     justify-content: center;
+    margin: 0;
     padding: 30px;
 
     li {
