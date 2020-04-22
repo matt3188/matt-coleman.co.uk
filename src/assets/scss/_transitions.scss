@@ -1,0 +1,66 @@
+.overlay-left-enter ~ .overlay-left,
+.overlay-left-leave-to ~ .overlay-left,
+.overlay-left-full-enter-to ~ .overlay-left,
+.overlay-right-enter ~ .overlay-right,
+.overlay-right-leave-to ~ .overlay-right,
+.overlay-right-full-enter-to ~ .overlay-right {
+  width: 0;
+}
+
+.overlay-right-full-enter ~ .overlay-left,
+.overlay-left-enter-active ~ .overlay-left,
+.overlay-left-leave-active ~ .overlay-left,
+.overlay-right-full-enter-active ~ .overlay-left,
+.overlay-right-full-leave-active ~ .overlay-left,
+.overlay-left-full-enter ~ .overlay-right,
+.overlay-right-enter-active ~ .overlay-right,
+.overlay-right-leave-active ~ .overlay-right,
+.overlay-left-full-enter-active ~ .overlay-right,
+.overlay-left-full-leave-active ~ .overlay-right {
+  width: 100vw;
+}
+
+.overlay-left-enter-active ~ .overlay-left,
+.overlay-right-full-enter-active ~ .overlay-left,
+.overlay-right-enter-active ~ .overlay-right,
+.overlay-left-full-enter-active ~ .overlay-right {
+  transition-timing-function: ease-in;
+}
+
+.overlay-left-leave-active ~ .overlay-left,
+.overlay-right-leave-active ~ .overlay-right {
+  transition-timing-function: ease-out;
+}
+
+.overlay-left-full-enter-active,
+.overlay-left-full-leave-active,
+.overlay-right-full-enter-active,
+.overlay-right-full-leave-active,
+.overlay-left-enter-active,
+.overlay-left-leave-active,
+.overlay-right-enter-active,
+.overlay-right-leave-active {
+  transition-duration: 0.3s;
+}
+
+.overlay-left-full-enter-to ~ .overlay-right,
+.overlay-left-full-enter-active ~ .overlay-right,
+.overlay-right-full-enter-to ~ .overlay-left,
+.overlay-right-full-enter-active ~ .overlay-left {
+  display: none;
+}
+
+.overlay-left-full-leave-active ~ .overlay-left,
+.overlay-right-full-leave-active ~ .overlay-right {
+  transition-timing-function: ease;
+}
+
+.overlay-right-full-enter ~ .overlay-right,
+.overlay-right-full-enter-to ~ .overlay-right,
+.overlay-right-full-enter-active ~ .overlay-right,
+.overlay-left-full-enter ~ .overlay-left,
+.overlay-left-full-enter-to ~ .overlay-left,
+.overlay-left-full-enter-active ~ .overlay-left {
+  transition-duration: unset !important;
+  width: 100vw;
+}

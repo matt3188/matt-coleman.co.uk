@@ -1,12 +1,30 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <Navigation />
+    <transition name="overlay-left-full" mode="out-in">
+      <router-view class="page-view" />
+    </transition>
+    <div class="overlay-right"></div>
+    <div class="overlay-left"></div>
   </div>
 </template>
+
+<script>
+import Navigation from '@/components/Navigation.vue';
+
+export default {
+  name: 'App',
+  components: {
+    Navigation,
+  },
+  created() {
+    this.$router.beforeEach((to, from, next) => {
+      this.transition = to.meta.transition;
+      next();
+    });
+  },
+};
+</script>
 
 <style lang="scss">
 #app {
@@ -16,17 +34,19 @@
   text-align: center;
   color: #2c3e50;
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.overlay-left,
+.overlay-right {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 0;
+  background: #1867c0;
+  transition-duration: 0.3s;
+}
+.overlay-left {
+  right: 0;
+}
+.overlay-right {
+  left: 0;
 }
 </style>
