@@ -13,11 +13,6 @@ export default [
     component: importView('Home'),
   },
   {
-    path: '/resume',
-    name: 'Resume',
-    component: importView('Resume'),
-  },
-  {
     path: '/about',
     name: 'About',
     component: importView('About'),

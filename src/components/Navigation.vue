@@ -5,7 +5,6 @@
       class="navigation-container"
       :class="{ 'navigation-container--active': navigationOpen }"
     >
-      <!-- <NavToggle @trigger-menu="openMenu" /> -->
       <Routes />
     </div>
   </div>
@@ -13,30 +12,27 @@
 
 <script>
 import Routes from '@/components/Routes.vue';
-// import NavToggle from '@/components/NavToggle.vue';
 
 export default {
   name: 'Navigation',
-  components: { Routes /* , NavToggle */ },
+  components: { Routes },
   data: () => {
     return {
       navigationOpen: false,
     };
   },
-  // methods: {
-  //   openMenu() {
-  //     this.navigationOpen = !this.navigationOpen;
-  //   },
-  // },
 };
 </script>
 
 <style lang="scss">
 .navigation-wrapper {
-  position: fixed;
+  background-color: white;
   bottom: 0;
+  box-shadow: 0 -10px 20px 0 rgba(69, 67, 96, 0.1);
   left: 0;
+  position: fixed;
   right: 0;
+  z-index: 11;
 
   @include media-breakpoint-up(md) {
     position: relative;

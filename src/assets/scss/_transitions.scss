@@ -64,3 +64,8 @@
   transition-duration: unset !important;
   width: 100vw;
 }
+
+.overlay-right,
+.overlay-left {
+  z-index: 2;
+}
