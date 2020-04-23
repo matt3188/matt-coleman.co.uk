@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-4"><Avatar :fill="avatarBg" width="200px" /></div>
         <div class="col-md-8">
-          <div class="about-me">
+          <div class="arrowed-container">
             <p>
               I'm Matt Coleman, I'm a strong and passionate front-end developer with good
               communication skills and a keen eye for detail. My philosophy is, if something is
@@ -21,7 +21,11 @@
           </div>
         </div>
       </div>
-      <SkillsList :skills="skills" />
+      <div class="row">
+        <div class="col">
+          <SkillsList :skills="skills" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -59,7 +63,7 @@ export default {
 </script>
 
 <style lang="scss">
-.about-me {
+.arrowed-container {
   background-color: $color-white;
   border-radius: 15px;
   box-shadow: 0 5px 20px 0 rgba(69, 67, 96, 0.1);
