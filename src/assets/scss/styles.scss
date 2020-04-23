@@ -10,13 +10,15 @@ body {
 }
 .page-view {
   padding: 25px 0 0;
-  
+
   @include media-breakpoint-down(md) {
     margin: 25px 0 120px;
   }
 
 }
 .btn {
+  display: inline-block;
+
   &__standard {
     appearance: none;
     background-color: $color-coral-red;
@@ -26,7 +28,9 @@ body {
     padding: 10px 25px;
 
     &:hover {
+      color: $color-white;
       background-color: rgba($color-coral-red, .9);
+      text-decoration: none;
     }
   }
 }
