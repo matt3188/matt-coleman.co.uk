@@ -1,8 +1,6 @@
 <template>
   <div class="hero-wrapper">
-    <div class="avatar-wrapper">
-      <img src="@/assets/images/avatar-1.svg" />
-    </div>
+    <Avatar fill="#ffd25f" width="200px" />
     <h2 class="name">Matt Coleman</h2>
     <vue-typed-js
       :loop="true"
@@ -21,6 +19,7 @@
 
 <script>
 import SocialIconList from '@/components/SocialIconList.vue';
+import Avatar from '@/components/Avatar.vue';
 
 export default {
   name: 'Hero',
@@ -31,6 +30,7 @@ export default {
   },
   components: {
     SocialIconList,
+    Avatar,
   },
   beforeMount() {
     this.whatAmI = [
@@ -48,7 +48,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .hero-wrapper {
   display: flex;
   justify-content: center;
