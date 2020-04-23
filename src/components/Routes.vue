@@ -42,12 +42,12 @@ export default {
   }
 
   &__link {
-    color: #2c3e50;
-    font-weight: bold;
+    color: $color-aubergine;
     padding: 10px 20px;
 
+    &:hover,
     &.router-link-exact-active {
-      color: #42b983;
+      color: $color-coral-red;
     }
   }
 }

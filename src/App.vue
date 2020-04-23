@@ -28,7 +28,7 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Rubik', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -40,7 +40,7 @@ export default {
   top: 0;
   height: 100vh;
   width: 0;
-  background: #1867c0;
+  background: $color-aubergine;
   transition-duration: 0.3s;
 }
 .overlay-left {

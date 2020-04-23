@@ -1,0 +1,12 @@
+$color-coral-red: #ff4c60;
+$color-aubergine: #5e5c7f;
+$color-green: #42b983;
+$color-white: #fff;
+
+// Exported to use with JS
+:export {
+  coralRed: $color-coral-red;
+  aubergine: $color-aubergine;
+  white: $color-white;
+  green: $color-green;
+}
