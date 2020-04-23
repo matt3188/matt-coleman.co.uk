@@ -10,13 +10,18 @@
         ><svg-icon :width="iconSize" :height="iconSize" iconType="linkedin" :iconColor="iconColor"
       /></a>
     </li>
+    <li>
+      <a :href="stravaUrl" target="_blank"
+        ><svg-icon :width="iconSize" :height="iconSize" iconType="strava" :iconColor="iconColor"
+      /></a>
+    </li>
   </ul>
 </template>
 
 <script>
 import variables from '@/assets/scss/_variables.scss';
 import SvgIcon from '@/components/SvgIcon.vue';
-import { GITHUB_URL, LINKEDIN_URL } from '@/constants';
+import { GITHUB_URL, LINKEDIN_URL, STRAVA_URL } from '@/constants';
 
 export default {
   components: {
@@ -29,6 +34,9 @@ export default {
     linkedinUrl() {
       return LINKEDIN_URL;
     },
+    stravaUrl() {
+      return STRAVA_URL;
+    },
     iconColor() {
       return variables.aubergine;
     },
@@ -39,16 +47,9 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .list {
-  margin: 0;
-  padding: 0;
-
-  &--horizontal {
-    display: flex;
-  }
   li {
-    list-style: none;
     margin-right: 1rem;
 
     &:last-child {
