@@ -15,7 +15,9 @@
               development within a team. I like to create modular, portable code with a DRY approach
               and I also try and future proof my code as best I can.
             </p>
-            <button class="btn btn__standard">Download CV</button>
+            <a :href="`${publicPath}pdf/MLC_CV_2020.pdf`" target="_blank" class="btn btn__standard">
+              Download CV
+            </a>
           </div>
         </div>
       </div>
@@ -38,6 +40,7 @@ export default {
   data() {
     return {
       skills: [],
+      publicPath: process.env.BASE_URL,
     };
   },
   mounted() {
