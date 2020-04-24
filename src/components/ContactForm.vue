@@ -1,7 +1,19 @@
 <template>
   <form v-on:submit.prevent="submitForm">
     <div class="contact-form" v-for="(field, index) in formFields" :key="index">
-      <FormInput :label="field.label" :id="field.id" :type="field.type" :name="field.name" />
+      <FormInput
+        v-model="form[field.name]"
+        :label="field.label"
+        :id="field.id"
+        :type="field.type"
+        :name="field.name"
+        :value="field.name"
+        @input="
+          (newValue) => {
+            form[field.name] = newValue;
+          }
+        "
+      />
     </div>
 
     <button type="submit">Send</button>
@@ -44,6 +56,12 @@ export default {
           name: 'your_message',
         },
       ],
+      form: {
+        your_name: '',
+        email: '',
+        subject: '',
+        your_message: '',
+      },
     };
   },
   methods: {
