@@ -5,6 +5,7 @@
         <input
           v-if="type !== 'textarea'"
           v-model="value"
+          :value="this.value"
           :key="id"
           :id="id"
           class="form-control"
@@ -96,21 +97,13 @@ export default {
     width: 100%;
 
     &:valid,
-    &:focus {
+    &:focus,
+    &[value]:not([value='']) {
       + label {
         padding: 10px 15px;
         transform: translate3d(0, -100%, 0);
       }
     }
-
-    // &[type='email'] {
-    //   &:invalid {
-    //     + label {
-    //       padding: 10px 15px;
-    //       transform: translate3d(0, -100%, 0);
-    //     }
-    //   }
-    // }
 
     &:focus {
       box-shadow: 0 0 10px 0 rgba($color-aubergine, 0.5);
