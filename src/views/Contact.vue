@@ -1,6 +1,10 @@
 <template>
   <div class="contact">
-    <ContactForm />
+    <div class="container">
+      <div class="col-md-8">
+        <ContactForm />
+      </div>
+    </div>
   </div>
 </template>
 

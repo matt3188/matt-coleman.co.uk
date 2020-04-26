@@ -1,6 +1,6 @@
 <template>
-  <form v-on:submit.prevent="submitForm">
-    <div class="contact-form" v-for="(field, index) in formFields" :key="index">
+  <form class="form" v-on:submit.prevent="submitForm">
+    <div v-for="(field, index) in formFields" :key="index">
       <FormInput
         v-model="form[field.name]"
         :label="field.label"
@@ -8,6 +8,8 @@
         :type="field.type"
         :name="field.name"
         :value="field.name"
+        :required="field.required"
+        :rows="field.rows"
         @input="
           (newValue) => {
             form[field.name] = newValue;
@@ -16,7 +18,7 @@
       />
     </div>
 
-    <button type="submit">Send</button>
+    <button class="btn btn__standard" type="submit">Send</button>
   </form>
 </template>
 
@@ -36,24 +38,29 @@ export default {
           label: 'Your Name',
           type: 'text',
           name: 'your_name',
+          required: true,
         },
         {
           id: 'email',
           label: 'Email address',
           type: 'email',
           name: 'email',
+          required: true,
         },
         {
           id: 'subject',
           label: 'Subject',
           type: 'text',
           name: 'subject',
+          required: true,
         },
         {
           id: 'your-message',
           label: 'Your message',
           type: 'textarea',
+          rows: '5',
           name: 'your_message',
+          required: true,
         },
       ],
       form: {
@@ -72,4 +79,22 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.form {
+  > div {
+    &:nth-child(1) {
+      padding-right: 20px;
+    }
+    &:nth-child(1),
+    &:nth-child(2) {
+      display: inline-block;
+      width: 50%;
+    }
+  }
+
+  [type='submit'] {
+    align-self: flex-start;
+    display: flex;
+  }
+}
+</style>
