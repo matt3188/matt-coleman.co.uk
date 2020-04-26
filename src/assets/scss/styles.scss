@@ -22,9 +22,10 @@ body {
   &__standard {
     appearance: none;
     background-color: $color-coral-red;
+    border-radius: 25px;
     border: 0;
     color: $color-white;
-    border-radius: 25px;
+    font-weight: 700;
     padding: 10px 25px;
 
     &:hover {
