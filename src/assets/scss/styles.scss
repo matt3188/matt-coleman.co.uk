@@ -27,6 +27,12 @@ body {
     color: $color-white;
     font-weight: 700;
     padding: 10px 25px;
+    
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 10px 0 rgba($color-coral-red, 0.8);
+
+    }
 
     &:hover {
       color: $color-white;

@@ -1,37 +1,42 @@
 <template>
-  <form class="form" v-on:submit.prevent="submitForm">
-    <div v-for="(field, index) in formFields" :key="index">
-      <FormInput
-        v-model="form[field.name]"
-        :label="field.label"
-        :id="field.id"
-        :type="field.type"
-        :name="field.name"
-        :value="field.name"
-        :required="field.required"
-        :rows="field.rows"
-        @input="
-          (newValue) => {
-            form[field.name] = newValue;
-          }
-        "
-      />
-    </div>
+  <ValidationObserver v-slot="{ handleSubmit }">
+    <form class="form" @submit.prevent="handleSubmit(onSubmit)" novalidate>
+      <div v-for="field in formFields" :key="field.id">
+        <FormInput
+          v-model="form[field.name]"
+          :label="field.label"
+          :id="field.id"
+          :type="field.type"
+          :name="field.name"
+          :value="field.name"
+          :required="field.required"
+          :rows="field.rows"
+          @input="
+            (newValue) => {
+              form[field.name] = newValue;
+            }
+          "
+        />
+      </div>
 
-    <button class="btn btn__standard" type="submit">Send</button>
-  </form>
+      <button class="btn btn__standard" type="submit">Send</button>
+    </form>
+  </ValidationObserver>
 </template>
 
 <script>
+import { ValidationObserver } from 'vee-validate';
 import FormInput from '@/components/FormInput.vue';
 
 export default {
   name: 'ContactForm',
   components: {
     FormInput,
+    ValidationObserver,
   },
   data() {
     return {
+      errors: {},
       formFields: [
         {
           id: 'your_name',
@@ -49,7 +54,7 @@ export default {
         },
         {
           id: 'subject',
-          label: 'Subject',
+          label: 'What do you want to talk about?',
           type: 'text',
           name: 'subject',
           required: true,
@@ -72,7 +77,7 @@ export default {
     };
   },
   methods: {
-    submitForm() {
+    onSubmit() {
       console.log(this.form);
     },
   },

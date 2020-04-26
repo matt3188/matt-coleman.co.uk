@@ -1,31 +1,49 @@
 <template>
-  <div class="form-group">
-    <input
-      v-if="type !== 'textarea'"
-      v-model="value"
-      :id="id"
-      class="form-control"
-      :type="type"
-      :name="name"
-      :required="required"
-    />
-    <textarea
-      v-else
-      v-model="value"
-      :id="id"
-      class="form-control"
-      :type="type"
-      :name="name"
-      :required="required"
-      :rows="rows"
-    />
-    <label :for="id">{{ label }}</label>
-  </div>
+  <ValidationProvider :name="name">
+    <template slot-scope="{ errors }">
+      <div class="form-group">
+        <input
+          v-if="type !== 'textarea'"
+          v-model="value"
+          :key="id"
+          :id="id"
+          class="form-control"
+          :type="type"
+          :name="name"
+          :required="required"
+        />
+        <textarea
+          v-else
+          v-model="value"
+          :id="id"
+          class="form-control"
+          :type="type"
+          :name="name"
+          :required="required"
+          :rows="rows"
+        />
+        <label :for="id">{{ label }}</label>
+        <transition name="fade">
+          <span v-if="errors[0]" class="invalid-feedback">{{ errors[0] }}</span>
+        </transition>
+      </div>
+    </template>
+  </ValidationProvider>
 </template>
 
 <script>
+import { ValidationProvider, extend } from 'vee-validate';
+import { required, email } from 'vee-validate/dist/rules';
+
+extend('required', {
+  ...required,
+  message: 'This field is required',
+});
+extend('email', email);
+
 export default {
   name: 'FormInput',
+  components: { ValidationProvider },
   props: {
     label: String,
     id: String,
@@ -52,25 +70,26 @@ export default {
   &-group {
     color: rgba(#454360, 0.5);
     display: flex;
+    flex-direction: column;
+    margin: 0 0 35px;
     position: relative;
 
     label {
-      position: absolute;
       line-height: 1;
       margin: 0;
       padding: 20px 30px;
+      position: absolute;
       transition: transform 0.5s, padding 0.5s;
     }
   }
 
   &-control {
-    border: 0;
     border-radius: 30px;
+    border: 0;
     box-shadow: 0 5px 20px 0 rgba(69, 67, 96, 0.1);
     color: #454360;
     font-size: 16px;
     line-height: 1;
-    margin: 0 0 35px;
     outline: 0;
     padding: 20px 30px;
     transition: box-shadow 0.5s;
@@ -79,14 +98,30 @@ export default {
     &:valid,
     &:focus {
       + label {
-        transform: translate3d(0, -100%, 0);
         padding: 10px 15px;
+        transform: translate3d(0, -100%, 0);
       }
     }
+
+    // &[type='email'] {
+    //   &:invalid {
+    //     + label {
+    //       padding: 10px 15px;
+    //       transform: translate3d(0, -100%, 0);
+    //     }
+    //   }
+    // }
 
     &:focus {
       box-shadow: 0 0 10px 0 rgba($color-aubergine, 0.5);
     }
+  }
+
+  .invalid-feedback {
+    display: block;
+    font-size: 80%;
+    padding: 5px 30px;
+    text-align: left;
   }
 }
 </style>
