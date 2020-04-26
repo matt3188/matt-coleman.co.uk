@@ -5,7 +5,7 @@
         <input
           v-if="type !== 'textarea'"
           v-model="value"
-          :value="this.value"
+          v-on:keyup="setValue($event, value)"
           :key="id"
           :id="id"
           class="form-control"
@@ -57,6 +57,20 @@ export default {
     return {
       value: '',
     };
+  },
+  methods: {
+    /**
+     * Method to set value of email type so
+     * I can move the label properly if the
+     * value exists but it's not valid
+     */
+    setValue(event, value) {
+      if (event.target.type === 'email') {
+        console.log(event.target.value);
+        return event.target.setAttribute('value', value);
+      }
+      return false;
+    },
   },
   watch: {
     value() {
