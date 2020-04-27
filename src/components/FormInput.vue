@@ -66,7 +66,6 @@ export default {
      */
     setValue(event, value) {
       if (event.target.type === 'email') {
-        console.log(event.target.value);
         return event.target.setAttribute('value', value);
       }
       return false;

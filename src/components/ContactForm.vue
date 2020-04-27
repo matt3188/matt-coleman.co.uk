@@ -1,6 +1,13 @@
 <template>
   <ValidationObserver v-slot="{ handleSubmit }">
-    <form class="form" @submit.prevent="handleSubmit(onSubmit)" novalidate>
+    <form
+      class="form"
+      @submit.prevent="handleSubmit(onSubmit)"
+      action="https://mailthis.to/mattcoleman"
+      method="post"
+      novalidate
+      ref="contactForm"
+    >
       <div v-for="field in formFields" :key="field.id">
         <FormInput
           v-model="form[field.name]"
@@ -34,51 +41,49 @@ export default {
     FormInput,
     ValidationObserver,
   },
-  data() {
-    return {
-      errors: {},
-      formFields: [
-        {
-          id: 'your_name',
-          label: 'Your Name',
-          type: 'text',
-          name: 'your_name',
-          required: true,
-        },
-        {
-          id: 'email',
-          label: 'Email address',
-          type: 'email',
-          name: 'email',
-          required: true,
-        },
-        {
-          id: 'subject',
-          label: 'What do you want to talk about?',
-          type: 'text',
-          name: 'subject',
-          required: true,
-        },
-        {
-          id: 'your-message',
-          label: 'Your message',
-          type: 'textarea',
-          rows: '5',
-          name: 'your_message',
-          required: true,
-        },
-      ],
-      form: {
-        your_name: '',
-        email: '',
-        subject: '',
-        your_message: '',
+  data: () => ({
+    errors: {},
+    formFields: [
+      {
+        id: 'name',
+        label: 'Your Name',
+        type: 'text',
+        name: 'name',
+        required: true,
       },
-    };
-  },
+      {
+        id: 'email',
+        label: 'Email address',
+        type: 'email',
+        name: 'email',
+        required: true,
+      },
+      {
+        id: 'subject',
+        label: 'What do you want to talk about?',
+        type: 'text',
+        name: 'subject',
+        required: true,
+      },
+      {
+        id: 'your-message',
+        label: 'Your message',
+        type: 'textarea',
+        rows: '5',
+        name: 'message',
+        required: true,
+      },
+    ],
+    form: {
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    },
+  }),
   methods: {
     onSubmit() {
-      console.log(this.form);
+      this.$refs.contactForm.submit();
     },
   },
 };
