@@ -50,17 +50,18 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .hero-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  .btn {
+    margin-top: 25px;
+  }
 }
 .name {
   font-weight: 700;
-}
-.btn {
-  margin-top: 25px;
 }
 </style>
