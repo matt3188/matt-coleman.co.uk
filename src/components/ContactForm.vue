@@ -1,15 +1,15 @@
 <template>
-  <ValidationObserver ref="form">
+  <ValidationObserver ref="form" slim>
     <form
-      v-if="!formSubmitted"
       class="form"
       action="https://mailthis.to/mattcoleman"
       method="post"
       novalidate
       ref="contactForm"
     >
-      <div v-for="field in formFields" :key="field.id">
+      <template v-for="field in formFields">
         <FormInput
+          :key="field.id"
           v-model="form[field.name]"
           :label="field.label"
           :id="field.id"
@@ -24,7 +24,7 @@
             }
           "
         />
-      </div>
+      </template>
       <input type="hidden" name="_subject" value="Contact form submission" />
       <input type="hidden" name="_after" :value="`${formLocation}?success`" />
       <input type="hidden" name="_honeypot" value="" />
@@ -33,7 +33,6 @@
         isSending ? 'Sending...' : 'Send'
       }}</Button>
     </form>
-    <div v-else>Success</div>
   </ValidationObserver>
 </template>
 
@@ -109,28 +108,12 @@ export default {
     formLocation() {
       return window.location.href;
     },
-    formSubmitted() {
-      return window.location.search.indexOf('success') >= 0;
-    },
   },
 };
 </script>
 
 <style lang="scss">
 .form {
-  > div {
-    @include media-breakpoint-up(md) {
-      &:nth-child(1) {
-        padding-right: 20px;
-      }
-      &:nth-child(1),
-      &:nth-child(2) {
-        display: inline-block;
-        width: 50%;
-      }
-    }
-  }
-
   [type='submit'] {
     align-self: flex-start;
     display: flex;

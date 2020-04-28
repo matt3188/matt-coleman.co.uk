@@ -1,34 +1,32 @@
 <template>
-  <ValidationProvider :name="name">
-    <template slot-scope="{ errors }">
-      <div class="form-group">
-        <input
-          v-if="type !== 'textarea'"
-          v-model="value"
-          v-on:keyup="setValue($event, value)"
-          :key="id"
-          :id="id"
-          class="form-control"
-          :type="type"
-          :name="name"
-          :required="required"
-        />
-        <textarea
-          v-else
-          v-model="value"
-          :id="id"
-          class="form-control"
-          :type="type"
-          :name="name"
-          :required="required"
-          :rows="rows"
-        />
-        <label :for="id">{{ label }}</label>
-        <transition name="fade">
-          <span v-if="errors[0]" class="invalid-feedback">{{ errors[0] }}</span>
-        </transition>
-      </div>
-    </template>
+  <ValidationProvider :name="name" slim>
+    <div class="form-group" slot-scope="{ errors }">
+      <input
+        v-if="type !== 'textarea'"
+        v-model="value"
+        v-on:keyup="setValue($event, value)"
+        :key="id"
+        :id="id"
+        class="form-control"
+        :type="type"
+        :name="name"
+        :required="required"
+      />
+      <textarea
+        v-else
+        v-model="value"
+        :id="id"
+        class="form-control"
+        :type="type"
+        :name="name"
+        :required="required"
+        :rows="rows"
+      />
+      <label :for="id">{{ label }}</label>
+      <transition name="fade">
+        <span v-if="errors[0]" class="invalid-feedback">{{ errors[0] }}</span>
+      </transition>
+    </div>
   </ValidationProvider>
 </template>
 
