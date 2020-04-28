@@ -107,13 +107,15 @@ export default {
 <style lang="scss">
 .form {
   > div {
-    &:nth-child(1) {
-      padding-right: 20px;
-    }
-    &:nth-child(1),
-    &:nth-child(2) {
-      display: inline-block;
-      width: 50%;
+    @include media-breakpoint-up(md) {
+      &:nth-child(1) {
+        padding-right: 20px;
+      }
+      &:nth-child(1),
+      &:nth-child(2) {
+        display: inline-block;
+        width: 50%;
+      }
     }
   }
 
