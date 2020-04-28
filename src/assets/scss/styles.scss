@@ -3,18 +3,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
 
 @import './transitions';
-@import '/variables';
+@import './variables';
 
 body {
   background-color: $color-blue-grey
 }
+
 .page-view {
   padding: 25px 0 0;
 
   @include media-breakpoint-down(md) {
     margin: 25px 0 120px;
   }
-
 }
 
 .list {
@@ -24,10 +24,15 @@ body {
   &--horizontal {
     display: flex;
   }
-  
+
+  &--vertical {
+    li {
+      margin: 0 0 10px;
+    }
+  }
+
   li {
     list-style: none;
-    
   }
 }
 

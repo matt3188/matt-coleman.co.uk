@@ -19,8 +19,9 @@
               :to="`${this.publicPath}pdf/MLC_CV_2020.pdf`"
               class="btn btn__standard"
               target="_blank"
-              >Download CV</router-link
             >
+              Download CV
+            </router-link>
           </div>
         </div>
       </div>
@@ -87,14 +88,6 @@ export default {
       right: 100%;
       top: 20%;
       width: 0;
-    }
-  }
-}
-
-.list {
-  &--vertical {
-    li {
-      margin: 0 0 10px;
     }
   }
 }
