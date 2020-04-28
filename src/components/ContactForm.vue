@@ -1,8 +1,7 @@
 <template>
-  <ValidationObserver v-slot="{ handleSubmit }">
+  <ValidationObserver ref="form">
     <form
       class="form"
-      @submit.prevent="handleSubmit(onSubmit)"
       action="https://mailthis.to/mattcoleman"
       method="post"
       novalidate
@@ -26,23 +25,29 @@
         />
       </div>
 
-      <button class="btn btn__standard" type="submit">Send</button>
+      <Button :onClick="onSubmit" class="btn__standard" type="submit">{{
+        isSending ? 'Sending...' : 'Send'
+      }}</Button>
     </form>
   </ValidationObserver>
 </template>
 
 <script>
 import { ValidationObserver } from 'vee-validate';
+import Button from '@/components/Button.vue';
 import FormInput from '@/components/FormInput.vue';
 
 export default {
   name: 'ContactForm',
   components: {
+    Button,
     FormInput,
     ValidationObserver,
   },
   data: () => ({
+    publicPath: process.env.BASE_URL,
     errors: {},
+    isSending: false,
     formFields: [
       {
         id: 'name',
@@ -82,8 +87,18 @@ export default {
     },
   }),
   methods: {
-    onSubmit() {
-      this.$refs.contactForm.submit();
+    onSubmit(event) {
+      event.preventDefault();
+      if (!this.isSending) {
+        this.$refs.form.validate().then((success) => {
+          if (!success) {
+            return;
+          }
+          this.isSending = true;
+          this.$refs.contactForm.submit();
+        });
+      }
+    },
     },
   },
 };
