@@ -1,6 +1,7 @@
 <template>
   <ValidationObserver ref="form">
     <form
+      v-if="!formSubmitted"
       class="form"
       action="https://mailthis.to/mattcoleman"
       method="post"
@@ -24,11 +25,15 @@
           "
         />
       </div>
+      <input type="hidden" name="_subject" value="Contact form submission" />
+      <input type="hidden" name="_after" :value="`${formLocation}?success`" />
+      <input type="hidden" name="_honeypot" value="" />
 
       <Button :onClick="onSubmit" class="btn__standard" type="submit">{{
         isSending ? 'Sending...' : 'Send'
       }}</Button>
     </form>
+    <div v-else>Success</div>
   </ValidationObserver>
 </template>
 
@@ -58,7 +63,7 @@ export default {
       },
       {
         id: 'email',
-        label: 'Email address',
+        label: 'Your email address',
         type: 'email',
         name: 'email',
         required: true,
@@ -99,6 +104,13 @@ export default {
         });
       }
     },
+  },
+  computed: {
+    formLocation() {
+      return window.location.href;
+    },
+    formSubmitted() {
+      return window.location.search.indexOf('success') >= 0;
     },
   },
 };
