@@ -55,3 +55,13 @@ body {
     
   }
 }
+
+// Avatar eye blink
+.blink {
+  animation: 5s blink infinite;
+}
+
+@keyframes blink {
+  5%  { ry: 0; }
+  10% { ry: 8; }
+}
