@@ -1,9 +1,13 @@
 <template>
   <div :style="iconStyle">
-    <svg preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <g :fill="iconColor">
-        <path :d="path" />
-      </g>
+    <svg
+      class="svg-icon"
+      preserveAspectRatio="xMidYMid meet"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      :fill="iconColor"
+    >
+      <path :d="path" />
     </svg>
   </div>
 </template>
@@ -21,7 +25,10 @@ export default {
       type: String,
       default: 'currentColor',
     },
-
+    hoverColor: {
+      type: String,
+      default: 'currentColor',
+    },
     width: {
       type: [Number, String],
       default: 18,
@@ -37,6 +44,7 @@ export default {
       return {
         width: `${width}px`,
         height: `${height}px`,
+        '--color-hover': this.hoverColor,
       };
     },
     path() {
@@ -45,3 +53,13 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.svg-icon {
+  transition: fill 0.3s;
+
+  &:hover {
+    fill: var(--color-hover);
+  }
+}
+</style>

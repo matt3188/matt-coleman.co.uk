@@ -4,8 +4,13 @@ $color-green: #42b983;
 $color-purple: #6c6ce5;
 $color-yellow: #ffd15c;
 $color-white: #fff;
+$color-black: #000;
 $color-light-grey: #f1f1f1;
 $color-blue-grey: #f9f9ff;
+
+$github: $color-black;
+$linkedin: #0077b5;
+$strava: #fc5200;
 
 // Exported to use with JS
 :export {
@@ -17,4 +22,7 @@ $color-blue-grey: #f9f9ff;
   white: $color-white;
   light-grey: $color-light-grey;
   blue-grey: $color-blue-grey;
+  github: $github;
+  linkedin: $linkedin;
+  strava: $strava;
 }
