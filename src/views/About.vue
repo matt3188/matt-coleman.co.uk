@@ -15,14 +15,9 @@
               development within a team. I like to create modular, portable code with a DRY approach
               and I also try and future proof my code as best I can.
             </p>
-            <router-link
-              :to="`${this.publicPath}pdf/MLC_CV_2020.pdf`"
-              class="btn btn__standard"
-              target="_blank"
-            >
+            <Button btnClass="btn__standard" :onClick="downloadCV">
               Download CV
-            </router-link>
-          </div>
+            </Button>
         </div>
       </div>
       <div class="row">
@@ -37,6 +32,7 @@
 <script>
 import variables from '@/assets/scss/_variables.scss';
 import Avatar from '@/components/Avatar.vue';
+import Button from '@/components/Button.vue';
 import SkillsList from '@/components/SkillsList.vue';
 
 export default {
@@ -44,6 +40,7 @@ export default {
   components: {
     SkillsList,
     Avatar,
+    Button,
   },
   data() {
     return {
@@ -58,7 +55,12 @@ export default {
       { name: 'Javascript', level: 80, colour: variables.purple },
     ];
   },
-
+  methods: {
+    downloadCV() {
+      const route = this.$router.resolve({ path: `${this.publicPath}pdf/MLC_CV_2020.pdf` });
+      window.open(route.href, '_blank');
+    },
+  },
   computed: {
     avatarBg() {
       return variables.aubergine;
