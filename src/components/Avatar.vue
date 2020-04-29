@@ -62,8 +62,8 @@
       fill-rule="evenodd"
     />
     <!-- eyes -->
-    <ellipse cx="121" cy="164" rx="4" class="blink" fill="#150d18" ry="8" />
-    <ellipse cx="180" cy="164" rx="4" class="blink" fill="#150d18" ry="8" />
+    <ellipse cx="180" cy="164" rx="4" ref="leftEye" fill="#150d18" ry="8" />
+    <ellipse cx="121" cy="164" rx="4" ref="rightEye" fill="#150d18" ry="8" />
     <path
       d="M105.35 152.47s22.18-7 33.27-6.42c0 0-1.87-12.11-15.11-10-15.71 2.55-18.16 16.38-18.16 16.38M194.05 146.93s-22.51-4.3-33.27-2.42c0 0 .37-12 13.56-11.42 15.65.67 19.71 13.84 19.71 13.84"
       fill="#3f2e2d"
@@ -96,5 +96,22 @@
 export default {
   name: 'Avatar',
   props: ['fill'],
+  mounted() {
+    this.blink();
+  },
+  methods: {
+    blink() {
+      const { leftEye, rightEye } = this.$refs;
+
+      setInterval(() => {
+        leftEye.classList.add('blink');
+        rightEye.classList.add('blink');
+        setTimeout(() => {
+          leftEye.classList.remove('blink');
+          rightEye.classList.remove('blink');
+        }, 500);
+      }, 5000);
+    },
+  },
 };
 </script>
