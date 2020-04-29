@@ -5,15 +5,20 @@
       ><span class="skill-level">{{ skillLevel() }}</span>
     </div>
     <div class="skill-bar">
-      <div
-        class="skill-bar-progress"
-        :style="`width: ${skillLevel()}; background-color: ${color}`"
-      ></div>
+      <transition appear @before-enter="beforeEnter" @after-appear="enter">
+        <div
+          class="skill-bar-progress"
+          :data-index="index"
+          :style="`background-color: ${color}`"
+        ></div>
+      </transition>
     </div>
   </div>
 </template>
 
 <script>
+import Velocity from 'velocity-animate';
+
 export default {
   name: 'SkillBar',
   props: {
@@ -29,10 +34,24 @@ export default {
       required: true,
       type: String,
     },
+    index: {
+      props: Number,
+    },
   },
   methods: {
     skillLevel() {
       return `${parseInt(this.$props.level, 10)}%`;
+    },
+    beforeEnter(el) {
+      const element = el;
+      element.style.width = 0;
+    },
+    enter(el, done) {
+      const element = el;
+      const delay = element.dataset.index * 250;
+      setTimeout(() => {
+        Velocity(element, { width: `${this.skillLevel()}` }, { delay: 1000 }, { complete: done });
+      }, delay);
     },
   },
 };
