@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-4"><Avatar :fill="avatarBg" width="200px" /></div>
         <div class="col-md-8">
-          <div class="arrowed-container">
+          <RoundedContainer hasArrow>
             <p>
               I'm Matt Coleman, I'm a strong and passionate front-end developer with good
               communication skills and a keen eye for detail. My philosophy is, if something is
@@ -18,6 +18,7 @@
             <Button btnClass="btn__standard" :onClick="downloadCV">
               Download CV
             </Button>
+          </RoundedContainer>
         </div>
       </div>
       <div class="row">
@@ -33,6 +34,7 @@
 import variables from '@/assets/scss/_variables.scss';
 import Avatar from '@/components/Avatar.vue';
 import Button from '@/components/Button.vue';
+import RoundedContainer from '@/components/RoundedContainer.vue';
 import SkillsList from '@/components/SkillsList.vue';
 
 export default {
@@ -41,6 +43,7 @@ export default {
     SkillsList,
     Avatar,
     Button,
+    RoundedContainer,
   },
   data() {
     return {
