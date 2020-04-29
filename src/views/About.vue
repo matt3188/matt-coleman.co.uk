@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-4"><Avatar :fill="avatarBg" width="200px" /></div>
         <div class="col-md-8">
-          <div class="arrowed-container">
+          <RoundedContainer hasArrow>
             <p>
               I'm Matt Coleman, I'm a strong and passionate front-end developer with good
               communication skills and a keen eye for detail. My philosophy is, if something is
@@ -15,10 +15,10 @@
               development within a team. I like to create modular, portable code with a DRY approach
               and I also try and future proof my code as best I can.
             </p>
-            <a :href="`${publicPath}pdf/MLC_CV_2020.pdf`" target="_blank" class="btn btn__standard">
+            <Button btnClass="btn__standard" :onClick="downloadCV">
               Download CV
-            </a>
-          </div>
+            </Button>
+          </RoundedContainer>
         </div>
       </div>
       <div class="row">
@@ -33,6 +33,8 @@
 <script>
 import variables from '@/assets/scss/_variables.scss';
 import Avatar from '@/components/Avatar.vue';
+import Button from '@/components/Button.vue';
+import RoundedContainer from '@/components/RoundedContainer.vue';
 import SkillsList from '@/components/SkillsList.vue';
 
 export default {
@@ -40,6 +42,8 @@ export default {
   components: {
     SkillsList,
     Avatar,
+    Button,
+    RoundedContainer,
   },
   data() {
     return {
@@ -53,6 +57,12 @@ export default {
       { name: 'CSS', level: 90, colour: variables.coralRed },
       { name: 'Javascript', level: 80, colour: variables.purple },
     ];
+  },
+  methods: {
+    downloadCV() {
+      const route = this.$router.resolve({ path: `${this.publicPath}pdf/MLC_CV_2020.pdf` });
+      window.open(route.href, '_blank');
+    },
   },
   computed: {
     avatarBg() {
@@ -83,14 +93,6 @@ export default {
       right: 100%;
       top: 20%;
       width: 0;
-    }
-  }
-}
-
-.list {
-  &--vertical {
-    li {
-      margin: 0 0 10px;
     }
   }
 }

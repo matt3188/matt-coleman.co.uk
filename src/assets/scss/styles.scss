@@ -3,35 +3,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
 
 @import './transitions';
-@import '/variables';
+@import './variables';
 
 body {
   background-color: $color-blue-grey
 }
+
 .page-view {
   padding: 25px 0 0;
 
   @include media-breakpoint-down(md) {
     margin: 25px 0 120px;
-  }
-
-}
-.btn {
-  display: inline-block;
-
-  &__standard {
-    appearance: none;
-    background-color: $color-coral-red;
-    border: 0;
-    color: $color-white;
-    border-radius: 25px;
-    padding: 10px 25px;
-
-    &:hover {
-      color: $color-white;
-      background-color: rgba($color-coral-red, .9);
-      text-decoration: none;
-    }
   }
 }
 
@@ -42,9 +24,24 @@ body {
   &--horizontal {
     display: flex;
   }
-  
+
+  &--vertical {
+    li {
+      margin: 0 0 10px;
+    }
+  }
+
   li {
     list-style: none;
-    
   }
+}
+
+// Avatar eye blink
+.blink {
+  animation: 5s blink infinite;
+}
+
+@keyframes blink {
+  5%  { ry: 0; }
+  10% { ry: 8; }
 }

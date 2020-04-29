@@ -1,19 +1,15 @@
 <template>
   <ul class="list list--horizontal">
-    <li>
-      <a :href="githubUrl" target="_blank"
-        ><svg-icon :width="iconSize" :height="iconSize" iconType="github" :iconColor="iconColor"
-      /></a>
-    </li>
-    <li>
-      <a :href="linkedinUrl" target="_blank"
-        ><svg-icon :width="iconSize" :height="iconSize" iconType="linkedin" :iconColor="iconColor"
-      /></a>
-    </li>
-    <li>
-      <a :href="stravaUrl" target="_blank"
-        ><svg-icon :width="iconSize" :height="iconSize" iconType="strava" :iconColor="iconColor"
-      /></a>
+    <li v-for="icon in iconList" :key="icon.name">
+      <a :href="icon.url" target="_blank">
+        <svg-icon
+          :iconType="icon.name"
+          :width="iconSize"
+          :height="iconSize"
+          :iconColor="iconColor"
+          :hoverColor="icon.hoverColor"
+        />
+      </a>
     </li>
   </ul>
 </template>
@@ -24,19 +20,31 @@ import SvgIcon from '@/components/SvgIcon.vue';
 import { GITHUB_URL, LINKEDIN_URL, STRAVA_URL } from '@/constants';
 
 export default {
+  data() {
+    return {
+      iconList: [
+        {
+          name: 'github',
+          url: GITHUB_URL,
+          hoverColor: variables.github,
+        },
+        {
+          name: 'linkedin',
+          url: LINKEDIN_URL,
+          hoverColor: variables.linkedin,
+        },
+        {
+          name: 'strava',
+          url: STRAVA_URL,
+          hoverColor: variables.strava,
+        },
+      ],
+    };
+  },
   components: {
     SvgIcon,
   },
   computed: {
-    githubUrl() {
-      return GITHUB_URL;
-    },
-    linkedinUrl() {
-      return LINKEDIN_URL;
-    },
-    stravaUrl() {
-      return STRAVA_URL;
-    },
     iconColor() {
       return variables.aubergine;
     },

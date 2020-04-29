@@ -1,7 +1,7 @@
 <template>
   <ul class="list list--vertical">
     <li v-for="(skill, index) in this.skills" :key="index">
-      <SkillBar :title="skill.name" :level="skill.level" :color="skill.colour" />
+      <SkillBar :title="skill.name" :level="skill.level" :color="skill.colour" :index="index" />
     </li>
   </ul>
 </template>

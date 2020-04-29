@@ -13,13 +13,14 @@
     </vue-typed-js>
 
     <SocialIconList />
-    <button class="btn btn__standard" @click="hireMe">Hire me</button>
+    <Button btnClass="btn__standard" :onClick="hireMe">Hire me</Button>
   </div>
 </template>
 
 <script>
-import SocialIconList from '@/components/SocialIconList.vue';
 import Avatar from '@/components/Avatar.vue';
+import Button from '@/components/Button.vue';
+import SocialIconList from '@/components/SocialIconList.vue';
 
 export default {
   name: 'Hero',
@@ -29,8 +30,9 @@ export default {
     };
   },
   components: {
-    SocialIconList,
     Avatar,
+    Button,
+    SocialIconList,
   },
   beforeMount() {
     this.whatAmI = [
@@ -48,17 +50,18 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .hero-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  .btn {
+    margin-top: 25px;
+  }
 }
 .name {
   font-weight: 700;
-}
-.btn {
-  margin-top: 25px;
 }
 </style>
