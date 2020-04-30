@@ -1,19 +1,19 @@
 <template>
   <div class="hero-wrapper">
     <Avatar fill="#ffd25f" width="200px" />
-    <h2 class="name">Matt Coleman</h2>
-    <vue-typed-js
+    <h2 class="name">{{ name }}</h2>
+    <VueTypedJs
       :loop="true"
       :startDelay="1000"
       :backSpeed="50"
       :backDelay="2000"
-      :strings="whatAmI"
+      :strings="typedList"
     >
       <p><span class="typing"></span></p>
-    </vue-typed-js>
+    </VueTypedJs>
 
     <SocialIconList />
-    <Button btnClass="btn__standard" :onClick="hireMe">Hire me</Button>
+    <Button btnClass="btn__standard" :onClick="hireMe">{{ btnLabel }}</Button>
   </div>
 </template>
 
@@ -22,25 +22,26 @@ import Avatar from '@/components/Avatar.vue';
 import Button from '@/components/Button.vue';
 import SocialIconList from '@/components/SocialIconList.vue';
 
+import VueTypedJs from 'vue-typed-js/src/components/VueTypedJs.vue';
+
 export default {
   name: 'Hero',
-  data() {
-    return {
-      whatAmI: [],
-    };
+  props: {
+    name: {
+      type: String,
+    },
+    btnLabel: {
+      type: String,
+    },
+    typedList: {
+      type: Array,
+    },
   },
   components: {
     Avatar,
     Button,
     SocialIconList,
-  },
-  beforeMount() {
-    this.whatAmI = [
-      "I'm a Front-end Developer",
-      "I'm a Cyling enthusiast",
-      "I'm a Coffee lover",
-      "I'm a collector of LEGO",
-    ];
+    VueTypedJs,
   },
   methods: {
     hireMe() {
