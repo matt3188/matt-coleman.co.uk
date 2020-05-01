@@ -39,6 +39,7 @@
 import variables from '@/assets/scss/_variables.scss';
 import Avatar from '@/components/Avatar.vue';
 import Button from '@/components/Button.vue';
+import SectionHeader from '@/components/SectionHeader.vue';
 import RoundedContainer from '@/components/RoundedContainer.vue';
 import SkillsList from '@/components/SkillsList.vue';
 import Timeline from '@/components/Timeline.vue';
@@ -46,10 +47,11 @@ import Timeline from '@/components/Timeline.vue';
 export default {
   name: 'About',
   components: {
-    SkillsList,
     Avatar,
     Button,
     RoundedContainer,
+    SectionHeader,
+    SkillsList,
     Timeline,
   },
   data() {
