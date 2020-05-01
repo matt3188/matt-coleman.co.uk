@@ -28,7 +28,13 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <section-header heading="Exeriences"></section-header>
+          <section-header heading="Exeriences" />
+        </div>
+
+        <div class="col-md-6" v-for="experiences in splitExperiences" :key="experiences.id">
+          <RoundedContainer>
+            <Timeline :experiences="experiences" />
+          </RoundedContainer>
         </div>
       </div>
     </div>
@@ -56,6 +62,7 @@ export default {
   },
   data() {
     return {
+      splitExperiences: [],
       skills: [
         { name: 'HTML', level: 90, colour: variables.yellow },
         { name: 'CSS', level: 90, colour: variables.coralRed },
@@ -109,11 +116,21 @@ export default {
     };
   },
   mounted() {
+    this.splitExperiences = this.chunkArray(this.experiences, 2);
   },
   methods: {
     downloadCV() {
       const route = this.$router.resolve({ path: `${this.publicPath}pdf/MLC_CV_2020.pdf` });
       window.open(route.href, '_blank');
+    },
+    chunkArray(arr, n) {
+      const chunkLength = Math.max(arr.length / n, 1);
+      const chunks = [];
+      for (let i = 0; i < n; i += 1) {
+        if (chunkLength * (i + 1) <= arr.length)
+          chunks.push(arr.slice(chunkLength * i, chunkLength * (i + 1)));
+      }
+      return chunks;
     },
   },
   computed: {
