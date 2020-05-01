@@ -1,10 +1,10 @@
 <template>
-  <div class="experience">
-    <small class="date">{{ date }}</small>
-    <h3 class="role">{{ role }}</h3>
-    <span class="company">{{ company }}</span>
-    <div>{{ description }}</div>
-  </div>
+    <div class="experience" :data-index="id">
+      <small class="date">{{ date }}</small>
+      <h3 class="role">{{ role }}</h3>
+      <span class="company">{{ company }}</span>
+      <div>{{ description }}</div>
+    </div>
 </template>
 
 <script>
