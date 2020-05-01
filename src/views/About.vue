@@ -22,8 +22,13 @@
         </div>
       </div>
       <div class="row">
-        <div class="col">
+        <div class="col-md-12">
           <SkillsList :skills="skills" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <section-header heading="Exeriences"></section-header>
         </div>
       </div>
     </div>
