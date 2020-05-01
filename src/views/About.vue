@@ -49,7 +49,11 @@ export default {
   },
   data() {
     return {
-      skills: [],
+      skills: [
+        { name: 'HTML', level: 90, colour: variables.yellow },
+        { name: 'CSS', level: 90, colour: variables.coralRed },
+        { name: 'Javascript', level: 80, colour: variables.purple },
+      ],
       experiences: [
         {
           id: 0,
@@ -98,11 +102,6 @@ export default {
     };
   },
   mounted() {
-    this.skills = [
-      { name: 'HTML', level: 90, colour: variables.yellow },
-      { name: 'CSS', level: 90, colour: variables.coralRed },
-      { name: 'Javascript', level: 80, colour: variables.purple },
-    ];
   },
   methods: {
     downloadCV() {
