@@ -1,6 +1,6 @@
 <template>
-  <transition appear @before-enter="beforeEnter" @after-appear="enter">
-    <div class="experience" :data-index="id">
+  <transition appear>
+    <div class="experience" :data-index="id" v-observe-visibility="visibilityOptions">
       <small class="date">{{ date }}</small>
       <h3 class="role">{{ role }}</h3>
       <span class="company">{{ company }}</span>
@@ -10,10 +10,11 @@
 </template>
 
 <script>
-import Velocity from 'velocity-animate';
+import ViewportAnimations from '@/mixins';
 
 export default {
   name: 'Experience',
+  mixins: [ViewportAnimations],
   props: {
     id: Number,
     date: String,
@@ -22,16 +23,13 @@ export default {
     description: String,
   },
   methods: {
-    beforeEnter(el) {
-      const element = el;
-      element.style.opacity = 0;
-    },
-    enter(el, done) {
-      const element = el;
-      const delay = element.dataset.index * 150;
-      setTimeout(() => {
-        Velocity(element, { opacity: 1 }, { delay: 1000 }, { complete: done });
-      }, delay);
+    visibilityChanged(visible, observer) {
+      const $ref1 = observer.target;
+
+      if (visible && !$ref1.dataset.visible) {
+        this.fadeIn($ref1);
+        $ref1.dataset.visible = true;
+      }
     },
   },
 };

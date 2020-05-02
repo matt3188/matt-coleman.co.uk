@@ -23,16 +23,24 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <SkillsList :skills="skills" />
+          <SkillsList
+            :skills="skills"
+            v-observe-visibility="visibilityOptions"
+            style="opacity: 0;"
+          />
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
-          <section-header heading="Exeriences" />
+          <section-header
+            heading="Exeriences"
+            v-observe-visibility="visibilityOptions"
+            style="opacity: 0;"
+          />
         </div>
 
         <div class="col-md-6" v-for="experiences in splitExperiences" :key="experiences.id">
-          <RoundedContainer>
+          <RoundedContainer v-observe-visibility="visibilityOptions" style="opacity: 0;">
             <Timeline :experiences="experiences" />
           </RoundedContainer>
         </div>
@@ -49,6 +57,7 @@ import SectionHeader from '@/components/SectionHeader.vue';
 import RoundedContainer from '@/components/RoundedContainer.vue';
 import SkillsList from '@/components/SkillsList.vue';
 import Timeline from '@/components/Timeline.vue';
+import ViewportAnimations from '@/mixins';
 
 export default {
   name: 'About',
@@ -60,8 +69,10 @@ export default {
     SkillsList,
     Timeline,
   },
+  mixins: [ViewportAnimations],
   data() {
     return {
+      publicPath: process.env.BASE_URL,
       splitExperiences: [],
       skills: [
         { name: 'HTML', level: 90, colour: variables.yellow },
@@ -117,13 +128,21 @@ export default {
           description: 'Designing and building interactive adverts for a plethora of clients.',
         },
       ],
-      publicPath: process.env.BASE_URL,
     };
   },
   mounted() {
     this.splitExperiences = this.chunkArray(this.experiences, 2);
   },
   methods: {
+    visibilityChanged(visible, observer) {
+      console.log(visible, observer);
+      const $ref1 = observer.target;
+
+      if (visible && !$ref1.dataset.visible) {
+        this.fadeIn($ref1);
+        $ref1.dataset.visible = true;
+      }
+    },
     downloadCV() {
       const route = this.$router.resolve({ path: `${this.publicPath}pdf/MLC_CV_2020.pdf` });
       window.open(route.href, '_blank');
@@ -145,29 +164,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.arrowed-container {
-  background-color: $color-white;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px 0 rgba(69, 67, 96, 0.1);
-  margin-bottom: 50px;
-  padding: 25px;
-  position: relative;
-  text-align: left;
-
-  @include media-breakpoint-up(md) {
-    &:before {
-      border-bottom: 10px solid transparent;
-      border-right: 15px solid #fff;
-      border-top: 10px solid transparent;
-      content: '';
-      height: 0;
-      position: absolute;
-      right: 100%;
-      top: 20%;
-      width: 0;
-    }
-  }
-}
-</style>
