@@ -5,11 +5,12 @@
       ><span class="skill-level">{{ skillLevel() }}</span>
     </div>
     <div class="skill-bar">
-      <transition appear @before-enter="beforeEnter" @after-appear="enter">
+      <transition appear @before-enter="beforeEnter">
         <div
           class="skill-bar-progress"
           :data-index="index"
           :style="`background-color: ${color}`"
+          v-observe-visibility="visibilityOptions"
         ></div>
       </transition>
     </div>
@@ -17,10 +18,12 @@
 </template>
 
 <script>
+import ViewportAnimations from '@/mixins';
 import Velocity from 'velocity-animate';
 
 export default {
   name: 'SkillBar',
+  mixins: [ViewportAnimations],
   props: {
     title: {
       required: true,
@@ -41,6 +44,14 @@ export default {
   methods: {
     skillLevel() {
       return `${parseInt(this.$props.level, 10)}%`;
+    },
+    visibilityChanged(visible, observer) {
+      const $ref1 = observer.target;
+
+      if (visible && !$ref1.dataset.visible) {
+        this.enter($ref1);
+        $ref1.dataset.visible = true;
+      }
     },
     beforeEnter(el) {
       const element = el;

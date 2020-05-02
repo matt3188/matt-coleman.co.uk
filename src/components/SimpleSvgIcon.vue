@@ -16,7 +16,7 @@
 import ICONS from '@/components/icons';
 
 export default {
-  name: 'SvgIcon',
+  name: 'SimpleSvgIcon',
   props: {
     iconType: {
       type: String,
