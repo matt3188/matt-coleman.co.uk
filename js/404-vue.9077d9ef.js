@@ -1,2 +1,2 @@
 (window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["404-vue"],{"8cdb":function(n,e,t){"use strict";t.r(e);var u=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("div",[n._v("404")])},c=[],l={name:"NotFound"},o=l,a=t("2877"),r=Object(a["a"])(o,u,c,!1,null,null,null);e["default"]=r.exports}}]);
-//# sourceMappingURL=404-vue.6ba048ee.js.map
+//# sourceMappingURL=404-vue.9077d9ef.js.map
