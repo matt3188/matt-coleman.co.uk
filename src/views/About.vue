@@ -76,7 +76,7 @@ export default {
       splitExperiences: [],
       skills: [
         { name: 'HTML', level: 90, colour: variables.yellow },
-        { name: 'CSS', level: 90, colour: variables.coralRed },
+        { name: 'CSS', level: 90, colour: variables['coral-red'] },
         { name: 'Javascript', level: 80, colour: variables.purple },
       ],
       experiences: [
@@ -135,7 +135,6 @@ export default {
   },
   methods: {
     visibilityChanged(visible, observer) {
-      console.log(visible, observer);
       const $ref1 = observer.target;
 
       if (visible && !$ref1.dataset.visible) {
