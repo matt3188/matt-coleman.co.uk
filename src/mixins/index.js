@@ -13,7 +13,6 @@ const ViewportAnimations = {
   },
   methods: {
     fadeIn(el, done) {
-      console.log(el);
       const element = el;
       const delay = element.dataset.index * 150;
       setTimeout(() => {

@@ -31,7 +31,6 @@ const vm = new Vue({
     visibilityChanged(visible, observer) {
       const $ref1 = observer.target;
       if (visible && !$ref1.dataset.visible) {
-        console.log($ref1);
         $ref1.dataset.visible = true;
       }
     },
