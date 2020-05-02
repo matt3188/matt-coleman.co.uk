@@ -2,7 +2,7 @@
   <ul class="list list--horizontal">
     <li v-for="icon in iconList" :key="icon.name">
       <a :href="icon.url" target="_blank">
-        <svg-icon
+        <simple-svg-icon
           :iconType="icon.name"
           :width="iconSize"
           :height="iconSize"
@@ -16,7 +16,7 @@
 
 <script>
 import variables from '@/assets/scss/_variables.scss';
-import SvgIcon from '@/components/SvgIcon.vue';
+import SimpleSvgIcon from '@/components/SimpleSvgIcon.vue';
 import { GITHUB_URL, LINKEDIN_URL, STRAVA_URL } from '@/constants';
 
 export default {
@@ -42,7 +42,7 @@ export default {
     };
   },
   components: {
-    SvgIcon,
+    SimpleSvgIcon,
   },
   computed: {
     iconColor() {
