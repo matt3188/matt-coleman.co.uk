@@ -1,6 +1,6 @@
 <template>
   <ValidationProvider :name="name" slim>
-    <div class="form-group" slot-scope="{ errors }">
+    <div class="form-group" slot-scope="{ errors, passed }" :class="{ 'has-errors': errors[0] }">
       <input
         v-if="type !== 'textarea'"
         v-model="value"
@@ -23,6 +23,9 @@
         :rows="rows"
       />
       <label :for="id">{{ label }}</label>
+      <div class="svg-icon" :class="{ 'is-valid': passed }">
+        <AnimatedTick />
+      </div>
       <transition name="fade">
         <span v-if="errors[0]" class="invalid-feedback">{{ errors[0] }}</span>
       </transition>
@@ -34,6 +37,8 @@
 import { ValidationProvider, extend } from 'vee-validate';
 import { required, email } from 'vee-validate/dist/rules';
 
+import AnimatedTick from '@/components/AnimatedTick.vue';
+
 extend('required', {
   ...required,
   message: 'This field is required',
@@ -42,7 +47,7 @@ extend('email', email);
 
 export default {
   name: 'FormInput',
-  components: { ValidationProvider },
+  components: { ValidationProvider, AnimatedTick },
   props: {
     label: String,
     id: String,
@@ -80,7 +85,7 @@ export default {
 <style lang="scss">
 .form {
   &-group {
-    color: rgba(#454360, 0.5);
+    color: rgba($color-dark-purple, 0.5);
     display: flex;
     flex-direction: column;
     margin: 0 0 35px;
@@ -98,14 +103,18 @@ export default {
   &-control {
     border-radius: 30px;
     border: 0;
-    box-shadow: 0 5px 20px 0 rgba(69, 67, 96, 0.1);
-    color: #454360;
+    box-shadow: 0 5px 20px 0 rgba($color-dark-purple, 0.1);
+    color: $color-dark-purple;
     font-size: 16px;
     line-height: 1;
     outline: 0;
     padding: 20px 30px;
     transition: box-shadow 0.5s;
     width: 100%;
+
+    .has-errors & {
+      box-shadow: 0 0 10px 0 rgba($color-coral-red, 0.5);
+    }
 
     &:valid,
     &:focus,
@@ -126,6 +135,18 @@ export default {
     font-size: 80%;
     padding: 5px 30px;
     text-align: left;
+  }
+
+  .svg-icon {
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 20px;
+
+    svg {
+      vertical-align: top;
+    }
   }
 }
 </style>
