@@ -1,7 +1,9 @@
 $color-coral-red: #ff4c60;
 $color-aubergine: #5e5c7f;
 $color-green: #42b983;
+$color-teal: #20c997;
 $color-purple: #6c6ce5;
+$color-dark-purple: #454360;
 $color-yellow: #ffd15c;
 $color-white: #fff;
 $color-black: #000;
@@ -14,10 +16,12 @@ $strava: #fc5200;
 
 // Exported to use with JS
 :export {
-  coralRed: $color-coral-red;
+  coral-red: $color-coral-red;
   aubergine: $color-aubergine;
   green: $color-green;
+  teal: $color-teal;
   purple: $color-purple;
+  dark-purple: $color-dark-purple;
   yellow: $color-yellow;
   white: $color-white;
   black: $color-black;
