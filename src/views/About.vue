@@ -41,8 +41,12 @@
             style="opacity: 0;"
           />
         </div>
-
-        <div class="col-md-6" v-for="experiences in splitExperiences" :key="experiences.id">
+        <div class="col-md-6" v-if="isMobile">
+          <RoundedContainer v-observe-visibility="visibilityOptions" style="opacity: 0;">
+            <Timeline :experiences="experiences" />
+          </RoundedContainer>
+        </div>
+        <div v-else class="col-md-6" v-for="experiences in splitExperiences" :key="experiences.id">
           <RoundedContainer v-observe-visibility="visibilityOptions" style="opacity: 0;">
             <Timeline :experiences="experiences" />
           </RoundedContainer>
