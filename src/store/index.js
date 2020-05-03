@@ -1,11 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-
-const types = {
-  MOBILE: 'mobile',
-  TABLET: 'tablet',
-  DESKTOP: 'desktop',
-};
+import types from './types';
 
 Vue.use(Vuex);
 

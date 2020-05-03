@@ -2,10 +2,8 @@
   <div class="contact">
     <div class="container">
       <div class="row" v-if="!formSubmitted">
-        <div class="col-md-12">
-          <section-header heading="Get in touch"></section-header>
-        </div>
         <div class="col-md-4">
+          <section-header heading="Get in touch"></section-header>
           <h2>Let's talk</h2>
         </div>
         <div class="col-md-8">
@@ -62,5 +60,9 @@ export default {
 .svg-icon {
   width: 100px;
   height: 100px;
+}
+
+.section-header {
+  margin-top: 0;
 }
 </style>

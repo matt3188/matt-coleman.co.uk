@@ -18,7 +18,7 @@ export default {
       btnLabel: 'Hire me',
       whatAmI: [
         "I'm a Front-end Developer",
-        "I'm a Cyling enthusiast",
+        "I'm a Cycling enthusiast",
         "I'm a Coffee lover",
         "I'm a collector of LEGO",
       ],
