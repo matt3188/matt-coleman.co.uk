@@ -21,7 +21,11 @@ export default {
 <style lang="scss">
 .section-header {
   font-size: 25px;
-  margin: 70px 0 20px;
   text-align: left;
+  margin: 20px 0 20px;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 70px;
+  }
 }
 </style>
