@@ -50,6 +50,7 @@
 </template>
 
 <script>
+import types from '@/store/types';
 import variables from '@/assets/scss/_variables.scss';
 import Avatar from '@/components/Avatar.vue';
 import Button from '@/components/Button.vue';
@@ -70,6 +71,13 @@ export default {
     Timeline,
   },
   mixins: [ViewportAnimations],
+  props: {
+    static: {
+      default() {
+        return Object.assign(types);
+      },
+    },
+  },
   data() {
     return {
       publicPath: process.env.BASE_URL,
@@ -159,6 +167,9 @@ export default {
   computed: {
     avatarBg() {
       return variables.aubergine;
+    },
+    isMobile() {
+      return this.$store.state.viewport === this.static.MOBILE;
     },
   },
 };
