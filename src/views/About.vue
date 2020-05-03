@@ -2,7 +2,10 @@
   <div class="about">
     <div class="container">
       <div class="row">
-        <div class="col-md-4"><Avatar :fill="avatarBg" width="200px" /></div>
+        <div class="col-md-12" v-if="isMobile">
+          <section-header heading="About me" />
+        </div>
+        <div class="col-md-4" v-if="!isMobile"><Avatar :fill="avatarBg" /></div>
         <div class="col-md-8">
           <RoundedContainer hasArrow>
             <p>
@@ -33,7 +36,7 @@
       <div class="row">
         <div class="col-md-12">
           <section-header
-            heading="Exeriences"
+            heading="Experiences"
             v-observe-visibility="visibilityOptions"
             style="opacity: 0;"
           />
