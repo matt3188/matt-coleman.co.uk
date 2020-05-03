@@ -2,7 +2,10 @@
   <div class="about">
     <div class="container">
       <div class="row">
-        <div class="col-md-4"><Avatar :fill="avatarBg" width="200px" /></div>
+        <div class="col-md-12" v-if="isMobile">
+          <section-header heading="About me" />
+        </div>
+        <div class="col-md-4" v-if="!isMobile"><Avatar :fill="avatarBg" /></div>
         <div class="col-md-8">
           <RoundedContainer hasArrow>
             <p>
@@ -33,15 +36,23 @@
       <div class="row">
         <div class="col-md-12">
           <section-header
-            heading="Exeriences"
+            heading="Experiences"
             v-observe-visibility="visibilityOptions"
             style="opacity: 0;"
           />
         </div>
-
-        <div class="col-md-6" v-for="experiences in splitExperiences" :key="experiences.id">
+        <div class="col-md-6" v-if="isMobile">
           <RoundedContainer v-observe-visibility="visibilityOptions" style="opacity: 0;">
             <Timeline :experiences="experiences" />
+          </RoundedContainer>
+        </div>
+        <div v-else class="col-md-6" v-for="experiences in splitExperiences" :key="experiences.id">
+          <RoundedContainer>
+            <Timeline
+              :experiences="experiences"
+              v-observe-visibility="visibilityOptions"
+              style="opacity: 0;"
+            />
           </RoundedContainer>
         </div>
       </div>
@@ -50,6 +61,7 @@
 </template>
 
 <script>
+import types from '@/store/types';
 import variables from '@/assets/scss/_variables.scss';
 import Avatar from '@/components/Avatar.vue';
 import Button from '@/components/Button.vue';
@@ -70,6 +82,13 @@ export default {
     Timeline,
   },
   mixins: [ViewportAnimations],
+  props: {
+    static: {
+      default() {
+        return Object.assign(types);
+      },
+    },
+  },
   data() {
     return {
       publicPath: process.env.BASE_URL,
@@ -159,6 +178,9 @@ export default {
   computed: {
     avatarBg() {
       return variables.aubergine;
+    },
+    isMobile() {
+      return this.$store.state.viewport === this.static.MOBILE;
     },
   },
 };

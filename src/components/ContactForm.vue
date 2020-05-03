@@ -114,9 +114,23 @@ export default {
 
 <style lang="scss">
 .form {
+  margin-top: 20px;
+
   [type='submit'] {
-    align-self: flex-start;
-    display: flex;
+    @include media-breakpoint-down(md) {
+      width: 100%;
+    }
+
+    @include media-breakpoint-up(md) {
+      align-self: flex-start;
+      display: flex;
+    }
+  }
+
+  label[for='subject'] {
+    @media screen and (max-width: 326px) {
+      padding: 14px 30px;
+    }
   }
 }
 </style>
