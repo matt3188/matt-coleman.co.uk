@@ -38,12 +38,8 @@
           </RoundedContainer>
         </div>
         <div v-else class="col-md-6" v-for="experiences in splitExperiences" :key="experiences.id">
-          <RoundedContainer>
-            <Timeline
-              :experiences="experiences"
-              v-observe-visibility="visibilityOptions"
-              style="opacity: 0;"
-            />
+          <RoundedContainer v-observe-visibility="visibilityOptions" style="opacity: 0;">
+            <Timeline :experiences="experiences" />
           </RoundedContainer>
         </div>
       </div>
