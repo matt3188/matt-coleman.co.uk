@@ -7,7 +7,7 @@
       novalidate
       ref="contactForm"
     >
-      <template v-for="field in formFields">
+      <template v-for="field in formData.formFields">
         <FormInput
           :key="field.id"
           v-model="form[field.name]"
@@ -25,13 +25,14 @@
           "
         />
       </template>
+
       <input type="hidden" name="_subject" value="Contact form submission" />
       <input type="hidden" name="_after" :value="`${formLocation}?success`" />
       <input type="hidden" name="_honeypot" value="" />
 
-      <Button :onClick="onSubmit" class="btn__standard" type="submit">{{
-        isSending ? 'Sending...' : 'Send'
-      }}</Button>
+      <Button :onClick="onSubmit" class="btn__standard" type="submit">
+        {{ btnLabel }}
+      </Button>
     </form>
   </ValidationObserver>
 </template>
@@ -48,41 +49,12 @@ export default {
     FormInput,
     ValidationObserver,
   },
+  props: {
+    formData: Object,
+  },
   data: () => ({
     publicPath: process.env.BASE_URL,
-    errors: {},
     isSending: false,
-    formFields: [
-      {
-        id: 'name',
-        label: 'Your Name',
-        type: 'text',
-        name: 'name',
-        required: true,
-      },
-      {
-        id: 'email',
-        label: 'Your email address',
-        type: 'email',
-        name: 'email',
-        required: true,
-      },
-      {
-        id: 'subject',
-        label: 'What do you want to talk about?',
-        type: 'text',
-        name: 'subject',
-        required: true,
-      },
-      {
-        id: 'your-message',
-        label: 'Your message',
-        type: 'textarea',
-        rows: '5',
-        name: 'message',
-        required: true,
-      },
-    ],
     form: {
       name: '',
       email: '',
@@ -105,6 +77,10 @@ export default {
     },
   },
   computed: {
+    btnLabel() {
+      const label = this.formData.submitBtn;
+      return this.isSending ? label.submitting : label.send;
+    },
     formLocation() {
       return window.location.href;
     },

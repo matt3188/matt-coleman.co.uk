@@ -2,12 +2,14 @@
   <div class="contact">
     <div class="container">
       <div class="row" v-if="!formSubmitted">
+        <div class="col-md-12">
+          <section-header :heading="data.heading"></section-header>
+        </div>
         <div class="col-md-4">
-          <section-header heading="Get in touch"></section-header>
-          <h2>Let's talk</h2>
+          <h2>{{ data.subHeading }}</h2>
         </div>
         <div class="col-md-8">
-          <ContactForm />
+          <ContactForm :formData="data.form" />
         </div>
       </div>
       <div class="row" v-else>
@@ -26,6 +28,7 @@
 </template>
 
 <script>
+import data from '@/assets/data/site.json';
 import AnimatedTick from '@/components/AnimatedTick.vue';
 import ContactForm from '@/components/ContactForm.vue';
 import SectionHeader from '@/components/SectionHeader.vue';
@@ -40,6 +43,9 @@ export default {
   data: () => ({
     tickVisible: false,
   }),
+  beforeMount() {
+    this.data = data.pages.contact;
+  },
   mounted() {
     const tick = this.$refs.animatedTick;
     if (tick !== undefined) {
