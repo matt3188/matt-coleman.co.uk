@@ -1,7 +1,12 @@
 <template>
   <ul class="list list--horizontal">
     <li v-for="icon in iconList" :key="icon.name">
-      <a :href="icon.url" target="_blank">
+      <a
+        :href="icon.url"
+        target="_blank"
+        :aria-label="`Matt Coleman's ${icon.name} link`"
+        rel="noreferrer"
+      >
         <simple-svg-icon
           :iconType="icon.name"
           :width="iconSize"
