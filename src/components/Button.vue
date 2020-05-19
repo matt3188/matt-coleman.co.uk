@@ -31,6 +31,7 @@ export default {
     border: 0;
     color: $color-white;
     font-weight: 700;
+    font-size: 1.2rem;
     padding: 10px 25px;
 
     &:focus {
