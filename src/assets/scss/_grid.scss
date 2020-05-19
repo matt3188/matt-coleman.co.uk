@@ -1,0 +1,44 @@
+/**
+ * Customised grid
+ */
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+@import '~bootstrap/scss/reboot';
+
+.container {
+  @include make-container();
+  @include media-breakpoint-up(md) {
+    @include make-container-max-widths;
+  }
+}
+
+.row {
+  @include make-row();
+}
+
+.col-md-4 {
+  @include make-col-ready;
+  @include media-breakpoint-up(sm) {
+    @include make-col(4);
+  }
+}
+.col-md-6 {
+  @include make-col-ready;
+  @include media-breakpoint-up(sm) {
+    @include make-col(6);
+  }
+}
+.col-md-8 {
+  @include make-col-ready;
+  @include media-breakpoint-up(sm) {
+    @include make-col(8);
+  }
+}
+.col-md-12 {
+  @include make-col-ready;
+  @include media-breakpoint-up(sm) {
+    @include make-col(12);
+  }
+}
