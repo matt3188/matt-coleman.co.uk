@@ -31,6 +31,7 @@ export default {
 <style lang="scss">
 .router {
   &__list {
+    background-color: $color-aubergine;
     display: flex;
     justify-content: center;
     margin: 0;
@@ -42,12 +43,13 @@ export default {
   }
 
   &__link {
-    color: $color-aubergine;
+    color: $color-white;
     padding: 10px 20px;
 
     &:hover,
     &.router-link-exact-active {
-      color: $color-coral-red;
+      color: $color-yellow;
+      text-decoration: none;
     }
   }
 }

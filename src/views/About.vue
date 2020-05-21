@@ -114,7 +114,7 @@ export default {
   },
   computed: {
     avatarBg() {
-      return variables.aubergine;
+      return variables['dark-purple'];
     },
     isMobile() {
       return this.$store.state.viewport === this.static.MOBILE;
