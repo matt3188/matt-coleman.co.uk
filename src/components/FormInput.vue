@@ -94,7 +94,7 @@ export default {
     label {
       line-height: 1;
       margin: 0;
-      padding: 20px 30px;
+      padding: 22px 30px;
       position: absolute;
       transition: transform 0.5s, padding 0.5s;
     }
