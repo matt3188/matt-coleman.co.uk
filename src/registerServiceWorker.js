@@ -1,6 +1,25 @@
 /* eslint-disable no-console */
 
 import { register } from 'register-service-worker';
+import Vue from 'vue';
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+
+Vue.use(VueSweetalert2);
+
+let refreshing = false;
+const notifyUsersOfUpdates = () => {
+  if (refreshing) return;
+  Vue.swal({
+    title: "Ooo, there's new content",
+    confirmButtonText: 'Gimmie gimmie!',
+  }).then((result) => {
+    if (result.value) {
+      window.location.reload();
+      refreshing = true;
+    }
+  });
+};
 
 if (process.env.NODE_ENV === 'production') {
   register(`${process.env.BASE_URL}service-worker.js`, {
@@ -20,6 +39,7 @@ if (process.env.NODE_ENV === 'production') {
     },
     updated() {
       console.log('New content is available; please refresh.');
+      notifyUsersOfUpdates();
     },
     offline() {
       console.log('No internet connection found. App is running in offline mode.');
