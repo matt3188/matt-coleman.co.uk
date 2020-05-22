@@ -93,7 +93,7 @@ export default {
   margin-top: 20px;
 
   [type='submit'] {
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(sm) {
       width: 100%;
     }
 
