@@ -63,6 +63,7 @@ export default {
   .date {
     color: #8b88b1;
     font-size: 14px;
+    font-weight: 600;
   }
   .role {
     font-size: 20px;
