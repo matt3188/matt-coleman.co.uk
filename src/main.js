@@ -3,8 +3,10 @@ import VueTypedJs from 'vue-typed-js';
 import { throttle } from 'lodash';
 import { ObserveVisibility } from 'vue-observe-visibility';
 
-import App from './App.vue';
+import '@/assets/scss/styles.scss';
+
 import './registerServiceWorker';
+import App from './App.vue';
 import router from './router';
 import store from './store';
 
