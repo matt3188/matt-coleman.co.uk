@@ -1,5 +1,4 @@
 import Vue from 'vue';
-import VueTypedJs from 'vue-typed-js';
 import { throttle } from 'lodash-es';
 import { ObserveVisibility } from 'vue-observe-visibility';
 
@@ -10,8 +9,6 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
-Vue.use(VueTypedJs);
-
 // Directives
 Vue.directive('observe-visibility', ObserveVisibility);
 
@@ -20,7 +17,6 @@ Vue.config.productionTip = false;
 // eslint-disable-next-line
 const vm = new Vue({
   router,
-  VueTypedJs,
   store,
   created() {
     window.addEventListener('resize', throttle(this.windowResize, 200));
