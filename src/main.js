@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueTypedJs from 'vue-typed-js';
-import { throttle } from 'lodash';
+import { throttle } from 'lodash-es';
 import { ObserveVisibility } from 'vue-observe-visibility';
 
 import '@/assets/scss/styles.scss';
