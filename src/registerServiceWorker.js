@@ -11,8 +11,8 @@ let refreshing = false;
 const notifyUsersOfUpdates = () => {
   if (refreshing) return;
   Vue.swal({
-    title: "Ooo, there's new content",
-    confirmButtonText: 'Gimmie gimmie!',
+    title: 'New content available',
+    confirmButtonText: 'I want it!',
   }).then((result) => {
     if (result.value) {
       window.location.reload();

@@ -4,10 +4,10 @@ import { ObserveVisibility } from 'vue-observe-visibility';
 
 import '@/assets/scss/styles.scss';
 
-import './registerServiceWorker';
-import App from './App.vue';
-import router from './router';
-import store from './store';
+import '@/registerServiceWorker';
+import App from '@/App.vue';
+import router from '@/router';
+import store from '@/store';
 
 // Directives
 Vue.directive('observe-visibility', ObserveVisibility);
