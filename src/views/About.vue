@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12" v-if="isMobile">
-          <section-header :heading="data.headings.about" />
+          <SectionHeader :heading="data.headings.about" />
         </div>
         <div class="col-md-4" v-if="!isMobile"><Avatar :fill="avatarBg" /></div>
         <div class="col-md-8">
@@ -26,7 +26,7 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <section-header
+          <SectionHeader
             :heading="data.headings.experience"
             v-observe-visibility="visibilityOptions"
             style="opacity: 0;"
@@ -51,13 +51,14 @@
 import types from '@/store/types';
 import data from '@/assets/data/site.json';
 import variables from '@/assets/scss/_variables.scss';
-import Avatar from '@/components/Avatar.vue';
 import Button from '@/components/Button.vue';
 import SectionHeader from '@/components/SectionHeader.vue';
 import RoundedContainer from '@/components/RoundedContainer.vue';
 import SkillsList from '@/components/SkillsList.vue';
 import Timeline from '@/components/Timeline.vue';
 import ViewportAnimations from '@/mixins';
+
+const Avatar = () => import('@/components/Avatar.vue');
 
 export default {
   name: 'About',

@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row" v-if="!formSubmitted">
         <div class="col-md-12">
-          <section-header :heading="data.heading"></section-header>
+          <SectionHeader :heading="data.heading" />
         </div>
         <div class="col-md-4">
           <h2>{{ data.subHeading }}</h2>
@@ -14,13 +14,13 @@
       </div>
       <div class="row" v-else>
         <div class="col-md-12">
-          <section-header alignment="center" heading="Thank you for getting in touch">
+          <SectionHeader alignment="center" heading="Thank you for getting in touch">
             <AnimatedTick
               ref="animatedTick"
               class="svg-icon"
               :class="{ 'is-valid': tickVisible }"
             />
-          </section-header>
+          </SectionHeader>
         </div>
       </div>
     </div>
@@ -29,9 +29,10 @@
 
 <script>
 import data from '@/assets/data/site.json';
-import AnimatedTick from '@/components/AnimatedTick.vue';
 import ContactForm from '@/components/ContactForm.vue';
 import SectionHeader from '@/components/SectionHeader.vue';
+
+const AnimatedTick = () => import('@/components/AnimatedTick.vue');
 
 export default {
   name: 'Contact',
