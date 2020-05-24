@@ -29,9 +29,10 @@
 
 <script>
 import data from '@/assets/data/site.json';
-import AnimatedTick from '@/components/AnimatedTick.vue';
 import ContactForm from '@/components/ContactForm.vue';
 import SectionHeader from '@/components/SectionHeader.vue';
+
+const AnimatedTick = () => import('@/components/AnimatedTick.vue');
 
 export default {
   name: 'Contact',
