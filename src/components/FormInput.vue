@@ -37,7 +37,7 @@
 import { ValidationProvider, extend } from 'vee-validate';
 import { required, email } from 'vee-validate/dist/rules';
 
-import AnimatedTick from '@/components/AnimatedTick.vue';
+const AnimatedTick = () => import('@/components/AnimatedTick.vue');
 
 extend('required', {
   ...required,
@@ -101,8 +101,8 @@ export default {
   }
 
   &-control {
-    border-radius: 30px;
     border: 0;
+    border-radius: 30px;
     box-shadow: 0 5px 20px 0 rgba($color-dark-purple, 0.1);
     color: $color-dark-purple;
     font-size: 16px;

@@ -19,6 +19,14 @@ const ViewportAnimations = {
         Velocity(element, { opacity: 1 }, { delay: 1000 }, { complete: done });
       }, delay);
     },
+    animateWidth(el, done, width) {
+      const skill = width;
+      const element = el;
+      const delay = element.dataset.index * 250;
+      setTimeout(() => {
+        Velocity(element, { width: skill }, { delay: 1000 }, { complete: done });
+      }, delay);
+    },
   },
 };
 

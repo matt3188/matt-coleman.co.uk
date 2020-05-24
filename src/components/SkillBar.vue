@@ -19,7 +19,6 @@
 
 <script>
 import ViewportAnimations from '@/mixins';
-import Velocity from 'velocity-animate';
 
 export default {
   name: 'SkillBar',
@@ -49,20 +48,13 @@ export default {
       const $ref1 = observer.target;
 
       if (visible && !$ref1.dataset.visible) {
-        this.enter($ref1);
+        this.animateWidth($ref1, null, this.skillLevel());
         $ref1.dataset.visible = true;
       }
     },
     beforeEnter(el) {
       const element = el;
       element.style.width = 0;
-    },
-    enter(el, done) {
-      const element = el;
-      const delay = element.dataset.index * 250;
-      setTimeout(() => {
-        Velocity(element, { width: `${this.skillLevel()}` }, { delay: 1000 }, { complete: done });
-      }, delay);
     },
   },
 };
