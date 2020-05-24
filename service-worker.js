@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.0ea0e6a60ff0e270bcbb1aeaaa8eff47.js"
+  "/precache-manifest.ca06ea303c25ac693e20addf0c09a191.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "matt-coleman.co.uk"});
