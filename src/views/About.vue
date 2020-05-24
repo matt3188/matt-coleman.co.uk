@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12" v-if="isMobile">
-          <section-header :heading="data.headings.about" />
+          <SectionHeader :heading="data.headings.about" />
         </div>
         <div class="col-md-4" v-if="!isMobile"><Avatar :fill="avatarBg" /></div>
         <div class="col-md-8">
@@ -26,7 +26,7 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <section-header
+          <SectionHeader
             :heading="data.headings.experience"
             v-observe-visibility="visibilityOptions"
             style="opacity: 0;"

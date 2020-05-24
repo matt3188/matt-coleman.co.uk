@@ -3,9 +3,9 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <section-header :heading="data.heading" alignment="center">
+          <SectionHeader :heading="data.heading" alignment="center">
             <p>{{ data.subHeading }}</p>
-          </section-header>
+          </SectionHeader>
         </div>
       </div>
     </div>
