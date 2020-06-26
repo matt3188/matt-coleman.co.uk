@@ -84,7 +84,7 @@
       "form": {
         "submitBtn": {
           "send": "Send",
-          "submitting:": "Sending..."
+          "submitting": "Sending..."
         },
         "formFields": [
           {
