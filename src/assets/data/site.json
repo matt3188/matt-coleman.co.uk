@@ -81,7 +81,7 @@
     "contact": {
       "heading": "Get in touch",
       "subHeading": "Let's talk",
-      "form": {
+      "formData": {
         "submitBtn": {
           "send": "Send",
           "submitting": "Sending..."
