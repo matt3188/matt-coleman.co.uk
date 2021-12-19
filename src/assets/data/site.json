@@ -5,9 +5,10 @@
       "btnLabel": "Hire me",
       "whatAmI": [
         "I'm a Front-end Developer",
-        "I'm a Cycling enthusiast",
-        "I'm a Coffee lover",
-        "I'm a collector of LEGO"
+        "I'm a cycling enthusiast",
+        "I'm a coffee lover",
+        "I'm a collector of LEGO",
+        "I'm a motorcylce rider"
       ]
     },
     "about": {
@@ -22,7 +23,7 @@
       "skills": [
         { "name": "HTML", "level": 90, "colour": "yellow" },
         { "name": "CSS", "level": 90, "colour": "coral-red" },
-        { "name": "Javascript", "level": 80, "colour": "purple" }
+        { "name": "Javascript", "level": 85, "colour": "purple" }
       ],
       "headings": {
         "about": "About me",
@@ -30,15 +31,23 @@
       },
       "experiences": [
         {
-          "id": 0,
-          "date": "May 2019 - Present",
+          "id": 6,
+          "date": "August 2020 - present",
+          "role": "Senior Front-end Developer",
+          "company": "Guru Systems",
+          "description":
+            "Tackling carbon wastage in Heat Networks."
+        },
+        {
+          "id": 5,
+          "date": "May 2019 - August 2020",
           "role": "Lead Front-end Developer",
           "company": "Radley Yeldar",
           "description":
             "After proving myself as an integral part of the team, RY promoted me to Lead front-end."
         },
         {
-          "id": 1,
+          "id": 4,
           "date": "Feb 2019 - May 2019",
           "role": "Senior Front-end Developer",
           "company": "Radley Yeldar",
@@ -46,7 +55,7 @@
             "Thrown in at the deep end on one of the world's top law firms Sitecore builds."
         },
         {
-          "id": 2,
+          "id": 3,
           "date": "Feb 2018 - Feb 2019",
           "role": "Senior Client-side Engineer",
           "company": "Dare",
@@ -54,7 +63,7 @@
             "Led the front-end on a huge digital transformation for one of Europes largest banks."
         },
         {
-          "id": 3,
+          "id": 2,
           "date": "May 2017 - Feb 2018",
           "role": "UI Developer",
           "company": "Spindrift",
@@ -62,7 +71,7 @@
             "Mostly worked on-site with their clients, helping them to grow their digital prescence."
         },
         {
-          "id": 4,
+          "id": 1,
           "date": "Sept 2015 - Apr 2017",
           "role": "Front-end Developer",
           "company": "Dennis Publishing",
@@ -70,7 +79,7 @@
             "Worked on their entire range of in-house magazines that have supporting websites."
         },
         {
-          "id": 5,
+          "id": 0,
           "date": "Aug 2014 - Aug 2015",
           "role": "Digital Designer",
           "company": "Adnostic",
