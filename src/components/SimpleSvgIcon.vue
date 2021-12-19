@@ -13,45 +13,45 @@
 </template>
 
 <script>
-import ICONS from '@/components/icons';
+import ICONS from '@/components/icons'
 
 export default {
   name: 'SimpleSvgIcon',
   props: {
     iconType: {
-      type: String,
+      type: String
     },
     iconColor: {
       type: String,
-      default: 'currentColor',
+      default: 'currentColor'
     },
     hoverColor: {
       type: String,
-      default: 'currentColor',
+      default: 'currentColor'
     },
     width: {
       type: [Number, String],
-      default: 18,
+      default: 18
     },
     height: {
       type: [Number, String],
-      default: 18,
-    },
+      default: 18
+    }
   },
   computed: {
     iconStyle() {
-      const { width, height } = this;
+      const { width, height } = this
       return {
         width: `${width}px`,
         height: `${height}px`,
-        '--color-hover': this.hoverColor,
-      };
+        '--color-hover': this.hoverColor
+      }
     },
     path() {
-      return ICONS[this.iconType];
-    },
-  },
-};
+      return ICONS[this.iconType]
+    }
+  }
+}
 </script>
 
 <style lang="scss">

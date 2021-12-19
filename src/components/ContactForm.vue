@@ -19,8 +19,8 @@
           :required="field.required"
           :rows="field.rows"
           @input="
-            (newValue) => {
-              form[field.name] = newValue;
+            newValue => {
+              form[field.name] = newValue
             }
           "
         />
@@ -38,19 +38,19 @@
 </template>
 
 <script>
-import { ValidationObserver } from 'vee-validate';
-import Button from '@/components/Button.vue';
-import FormInput from '@/components/FormInput.vue';
+import { ValidationObserver } from 'vee-validate'
+import Button from '@/components/Button.vue'
+import FormInput from '@/components/FormInput.vue'
 
 export default {
   name: 'ContactForm',
   components: {
     Button,
     FormInput,
-    ValidationObserver,
+    ValidationObserver
   },
   props: {
-    formData: Object,
+    formData: Object
   },
   data: () => ({
     publicPath: process.env.BASE_URL,
@@ -59,33 +59,33 @@ export default {
       name: '',
       email: '',
       subject: '',
-      message: '',
-    },
+      message: ''
+    }
   }),
   methods: {
     onSubmit(event) {
-      event.preventDefault();
+      event.preventDefault()
       if (!this.isSending) {
-        this.$refs.form.validate().then((success) => {
+        this.$refs.form.validate().then(success => {
           if (!success) {
-            return;
+            return
           }
-          this.isSending = true;
-          this.$refs.contactForm.submit();
-        });
+          this.isSending = true
+          this.$refs.contactForm.submit()
+        })
       }
-    },
+    }
   },
   computed: {
     btnLabel() {
-      const label = this.formData.submitBtn;
-      return this.isSending ? label.submitting : label.send;
+      const label = this.formData.submitBtn
+      return this.isSending ? label.submitting : label.send
     },
     formLocation() {
-      return window.location.href;
-    },
-  },
-};
+      return window.location.href
+    }
+  }
+}
 </script>
 
 <style lang="scss">

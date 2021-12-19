@@ -15,17 +15,17 @@ export default {
   name: 'Routes',
   data() {
     return {
-      routes: this.$router.options.routes,
-    };
+      routes: this.$router.options.routes
+    }
   },
   computed: {
     activeRoutes() {
-      return this.routes.filter((route) => {
-        return route.name;
-      });
-    },
-  },
-};
+      return this.routes.filter(route => {
+        return route.name
+      })
+    }
+  }
+}
 </script>
 
 <style lang="scss">

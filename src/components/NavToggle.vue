@@ -7,10 +7,10 @@ export default {
   name: 'NavToggle',
   methods: {
     triggerMenu() {
-      this.$emit('trigger-menu');
-    },
-  },
-};
+      this.$emit('trigger-menu')
+    }
+  }
+}
 </script>
 
 <style></style>

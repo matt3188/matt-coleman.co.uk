@@ -12,25 +12,25 @@
 </template>
 
 <script>
-import SkillBar from '@/components/SkillBar.vue';
-import variables from '@/assets/scss/_exports.scss';
+import SkillBar from '@/components/SkillBar.vue'
+import variables from '@/assets/scss/_exports.scss'
 
 export default {
   name: 'SkillsList',
   components: {
-    SkillBar,
+    SkillBar
   },
   props: {
     skills: {
       type: Array,
-      required: true,
-    },
+      required: true
+    }
   },
   methods: {
     skillColour(arg) {
-      const colour = arg;
-      return variables[colour];
-    },
-  },
-};
+      const colour = arg
+      return variables[colour]
+    }
+  }
+}
 </script>

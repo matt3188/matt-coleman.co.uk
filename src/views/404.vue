@@ -13,16 +13,16 @@
 </template>
 
 <script>
-import data from '@/assets/data/site.json';
-import SectionHeader from '@/components/SectionHeader.vue';
+import data from '@/assets/data/site.json'
+import SectionHeader from '@/components/SectionHeader.vue'
 
 export default {
   beforeMount() {
-    this.data = data.pages['404'];
+    this.data = data.pages['404']
   },
   name: 'NotFound',
   components: {
-    SectionHeader,
-  },
-};
+    SectionHeader
+  }
+}
 </script>

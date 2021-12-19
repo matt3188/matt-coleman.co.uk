@@ -4,7 +4,7 @@
     x="0"
     y="0"
     viewBox="0 0 37 37"
-    style="enable-background: new 0 0 37 37;"
+    style="enable-background: new 0 0 37 37"
     xml:space="preserve"
   >
     <path
@@ -17,8 +17,8 @@
 
 <script>
 export default {
-  name: 'AnimatedTick',
-};
+  name: 'AnimatedTick'
+}
 </script>
 
 <style lang="scss">

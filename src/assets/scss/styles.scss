@@ -39,6 +39,10 @@ body {
 }
 
 @keyframes blink {
-  from { ry: 0; }
-  to   { ry: 8; }
+  from {
+    ry: 0;
+  }
+  to {
+    ry: 8;
+  }
 }

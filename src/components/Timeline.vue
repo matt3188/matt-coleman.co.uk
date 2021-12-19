@@ -7,13 +7,13 @@
 </template>
 
 <script>
-import Experience from '@/components/Experience.vue';
+import Experience from '@/components/Experience.vue'
 
 export default {
   name: 'Timeline',
   props: {
-    experiences: Array,
+    experiences: Array
   },
-  components: { Experience },
-};
+  components: { Experience }
+}
 </script>

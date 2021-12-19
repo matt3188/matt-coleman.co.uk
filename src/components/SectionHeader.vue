@@ -11,11 +11,11 @@ export default {
   props: {
     heading: {
       type: String,
-      required: true,
+      required: true
     },
-    alignment: String,
-  },
-};
+    alignment: String
+  }
+}
 </script>
 
 <style lang="scss">

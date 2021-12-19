@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import ViewportAnimations from '@/mixins';
+import ViewportAnimations from '@/mixins'
 
 export default {
   name: 'SkillBar',
@@ -26,38 +26,38 @@ export default {
   props: {
     title: {
       required: true,
-      type: String,
+      type: String
     },
     level: {
       required: true,
-      type: Number,
+      type: Number
     },
     color: {
       required: true,
-      type: String,
+      type: String
     },
     index: {
-      props: Number,
-    },
+      props: Number
+    }
   },
   methods: {
     skillLevel() {
-      return `${parseInt(this.$props.level, 10)}%`;
+      return `${parseInt(this.$props.level, 10)}%`
     },
     visibilityChanged(visible, observer) {
-      const $ref1 = observer.target;
+      const $ref1 = observer.target
 
       if (visible && !$ref1.dataset.visible) {
-        this.animateWidth($ref1, null, this.skillLevel());
-        $ref1.dataset.visible = true;
+        this.animateWidth($ref1, null, this.skillLevel())
+        $ref1.dataset.visible = true
       }
     },
     beforeEnter(el) {
-      const element = el;
-      element.style.width = 0;
-    },
-  },
-};
+      const element = el
+      element.style.width = 0
+    }
+  }
+}
 </script>
 
 <style lang="scss">

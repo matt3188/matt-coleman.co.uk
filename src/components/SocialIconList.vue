@@ -20,9 +20,9 @@
 </template>
 
 <script>
-import variables from '@/assets/scss/_exports.scss';
-import SimpleSvgIcon from '@/components/SimpleSvgIcon.vue';
-import { GITHUB_URL, LINKEDIN_URL, STRAVA_URL } from '@/constants';
+import variables from '@/assets/scss/_exports.scss'
+import SimpleSvgIcon from '@/components/SimpleSvgIcon.vue'
+import { GITHUB_URL, LINKEDIN_URL, STRAVA_URL } from '@/constants'
 
 export default {
   data() {
@@ -31,33 +31,33 @@ export default {
         {
           name: 'github',
           url: GITHUB_URL,
-          hoverColor: variables.github,
+          hoverColor: variables.github
         },
         {
           name: 'linkedin',
           url: LINKEDIN_URL,
-          hoverColor: variables.linkedin,
+          hoverColor: variables.linkedin
         },
         {
           name: 'strava',
           url: STRAVA_URL,
-          hoverColor: variables.strava,
-        },
-      ],
-    };
+          hoverColor: variables.strava
+        }
+      ]
+    }
   },
   components: {
-    SimpleSvgIcon,
+    SimpleSvgIcon
   },
   computed: {
     iconColor() {
-      return variables.aubergine;
+      return variables.aubergine
     },
     iconSize() {
-      return '24';
-    },
-  },
-};
+      return '24'
+    }
+  }
+}
 </script>
 
 <style scoped lang="scss">

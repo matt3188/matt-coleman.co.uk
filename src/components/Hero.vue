@@ -18,37 +18,36 @@
 </template>
 
 <script>
-import Avatar from '@/components/Avatar.vue';
-import Button from '@/components/Button.vue';
-import SocialIconList from '@/components/SocialIconList.vue';
-
-import VueTypedJs from 'vue-typed-js/src/components/VueTypedJs.vue';
+import VueTypedJs from 'vue-typed-js/src/components/VueTypedJs.vue'
+import Avatar from '@/components/Avatar.vue'
+import Button from '@/components/Button.vue'
+import SocialIconList from '@/components/SocialIconList.vue'
 
 export default {
   name: 'Hero',
   props: {
     name: {
-      type: String,
+      type: String
     },
     btnLabel: {
-      type: String,
+      type: String
     },
     typedList: {
-      type: Array,
-    },
+      type: Array
+    }
   },
   components: {
     Avatar,
     Button,
     SocialIconList,
-    VueTypedJs,
+    VueTypedJs
   },
   methods: {
     hireMe() {
-      this.$router.push({ name: 'Contact' });
-    },
-  },
-};
+      this.$router.push({ name: 'Contact' })
+    }
+  }
+}
 </script>
 
 <style lang="scss">

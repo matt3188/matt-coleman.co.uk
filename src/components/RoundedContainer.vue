@@ -8,9 +8,9 @@
 export default {
   name: 'RoundedContainer',
   props: {
-    hasArrow: Boolean,
-  },
-};
+    hasArrow: Boolean
+  }
+}
 </script>
 
 <style lang="scss">

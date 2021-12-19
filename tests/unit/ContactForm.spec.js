@@ -1,14 +1,14 @@
-import { mount } from '@vue/test-utils';
-import ContactForm from '@/components/ContactForm.vue';
+import { mount } from '@vue/test-utils'
+import ContactForm from '@/components/ContactForm.vue'
 
 describe('ContactForm.vue', () => {
-  const factory = (propsData) => {
+  const factory = propsData => {
     return mount(ContactForm, {
       propsData: {
         formData: {
           submitBtn: {
             send: 'Send',
-            submitting: 'Sending...',
+            submitting: 'Sending...'
           },
           formFields: [
             {
@@ -16,20 +16,20 @@ describe('ContactForm.vue', () => {
               label: 'Your Name',
               type: 'text',
               name: 'name',
-              required: true,
-            },
+              required: true
+            }
           ],
-          ...propsData,
-        },
-      },
-    });
-  };
+          ...propsData
+        }
+      }
+    })
+  }
 
   it('renders props.btnLabel when passed', () => {
-    const btnLabel = 'Send';
-    const wrapper = factory();
-    const button = wrapper.find('.btn__standard');
+    const btnLabel = 'Send'
+    const wrapper = factory()
+    const button = wrapper.find('.btn__standard')
 
-    expect(button.text()).toMatch(btnLabel);
-  });
-});
+    expect(button.text()).toMatch(btnLabel)
+  })
+})

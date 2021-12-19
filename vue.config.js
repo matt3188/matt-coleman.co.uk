@@ -1,12 +1,12 @@
 module.exports = {
   configureWebpack: {
-    devtool: 'source-map',
+    devtool: 'source-map'
   },
   pwa: {
     workboxOptions: {
       skipWaiting: true,
-      clientsClaim: true,
-    },
+      clientsClaim: true
+    }
   },
   css: {
     loaderOptions: {
@@ -16,8 +16,8 @@ module.exports = {
           @import '~bootstrap/scss/variables';
           @import '~bootstrap/scss/mixins';
           @import '@/assets/scss/_variables.scss';
-        `,
-      },
-    },
-  },
-};
+        `
+      }
+    }
+  }
+}

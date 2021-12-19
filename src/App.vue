@@ -10,20 +10,20 @@
 </template>
 
 <script>
-import Navigation from '@/components/Navigation.vue';
+import Navigation from '@/components/Navigation.vue'
 
 export default {
   name: 'App',
   components: {
-    Navigation,
+    Navigation
   },
   created() {
     this.$router.beforeEach((to, from, next) => {
-      this.transition = to.meta.transition;
-      next();
-    });
-  },
-};
+      this.transition = to.meta.transition
+      next()
+    })
+  }
+}
 </script>
 
 <style lang="scss">
@@ -40,7 +40,7 @@ export default {
   height: 100vh;
   width: 0;
   background: $color-aubergine;
-  transition-duration: 0.3s;
+  transition-duration: 0.2s;
 }
 .overlay-left {
   right: 0;

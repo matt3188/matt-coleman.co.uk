@@ -11,17 +11,17 @@
 </template>
 
 <script>
-import Routes from '@/components/Routes.vue';
+import Routes from '@/components/Routes.vue'
 
 export default {
   name: 'Navigation',
   components: { Routes },
   data: () => {
     return {
-      navigationOpen: false,
-    };
-  },
-};
+      navigationOpen: false
+    }
+  }
+}
 </script>
 
 <style lang="scss">

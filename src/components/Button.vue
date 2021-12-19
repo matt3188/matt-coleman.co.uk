@@ -1,5 +1,10 @@
 <template>
-  <button @click="onClick" :class="['btn', btnClass]" :target="target" :type="type">
+  <button
+    @click="onClick"
+    :class="['btn', btnClass]"
+    :target="target"
+    :type="type"
+  >
     <slot></slot>
   </button>
 </template>
@@ -10,13 +15,13 @@ export default {
   props: {
     onClick: {
       type: Function,
-      required: true,
+      required: true
     },
     btnClass: String,
     target: String,
-    type: String,
-  },
-};
+    type: String
+  }
+}
 </script>
 
 <style lang="scss">

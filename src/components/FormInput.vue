@@ -1,6 +1,10 @@
 <template>
   <ValidationProvider :name="name" slim>
-    <div class="form-group" slot-scope="{ errors, passed }" :class="{ 'has-errors': errors[0] }">
+    <div
+      class="form-group"
+      slot-scope="{ errors, passed }"
+      :class="{ 'has-errors': errors[0] }"
+    >
       <input
         v-if="type !== 'textarea'"
         v-model="value"
@@ -34,16 +38,16 @@
 </template>
 
 <script>
-import { ValidationProvider, extend } from 'vee-validate';
-import { required, email } from 'vee-validate/dist/rules';
+import { ValidationProvider, extend } from 'vee-validate'
+import { required, email } from 'vee-validate/dist/rules'
 
-const AnimatedTick = () => import('@/components/AnimatedTick.vue');
+const AnimatedTick = () => import('@/components/AnimatedTick.vue')
 
 extend('required', {
   ...required,
-  message: 'This field is required',
-});
-extend('email', email);
+  message: 'This field is required'
+})
+extend('email', email)
 
 export default {
   name: 'FormInput',
@@ -54,12 +58,12 @@ export default {
     type: String,
     name: String,
     required: Boolean,
-    rows: String,
+    rows: String
   },
   data() {
     return {
-      value: '',
-    };
+      value: ''
+    }
   },
   methods: {
     /**
@@ -69,17 +73,17 @@ export default {
      */
     setValue(event, value) {
       if (event.target.type === 'email') {
-        return event.target.setAttribute('value', value);
+        return event.target.setAttribute('value', value)
       }
-      return false;
-    },
+      return false
+    }
   },
   watch: {
     value() {
-      this.$emit('input', this.value);
-    },
-  },
-};
+      this.$emit('input', this.value)
+    }
+  }
+}
 </script>
 
 <style lang="scss">

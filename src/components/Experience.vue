@@ -1,6 +1,10 @@
 <template>
   <transition appear>
-    <div class="experience" :data-index="id" v-observe-visibility="visibilityOptions">
+    <div
+      class="experience"
+      :data-index="id"
+      v-observe-visibility="visibilityOptions"
+    >
       <small class="date">{{ date }}</small>
       <h3 class="role">{{ role }}</h3>
       <span class="company">{{ company }}</span>
@@ -10,7 +14,7 @@
 </template>
 
 <script>
-import ViewportAnimations from '@/mixins';
+import ViewportAnimations from '@/mixins'
 
 export default {
   name: 'Experience',
@@ -20,19 +24,19 @@ export default {
     date: String,
     role: String,
     company: String,
-    description: String,
+    description: String
   },
   methods: {
     visibilityChanged(visible, observer) {
-      const $ref1 = observer.target;
+      const $ref1 = observer.target
 
       if (visible && !$ref1.dataset.visible) {
-        this.fadeIn($ref1);
-        $ref1.dataset.visible = true;
+        this.fadeIn($ref1)
+        $ref1.dataset.visible = true
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style lang="scss">

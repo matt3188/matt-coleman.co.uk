@@ -1,5 +1,9 @@
 <template>
-  <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 299.4 380.99">
+  <svg
+    data-name="Layer 1"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 299.4 380.99"
+  >
     <circle cx="149.7" cy="149.7" r="149.7" :fill="fill" />
     <path
       d="M152.47 277.22c13.59 0 25.62-8.78 30.49-22-1-1-1.91-1.93-2.78-2.92-3.82 12.3-14.78 21.18-27.72 21.18s-23.9-8.89-27.72-21.18c-.87 1-1.79 2-2.78 2.92 4.89 13.24 16.92 22 30.51 22"
@@ -74,7 +78,11 @@
       fill="#e04f4c"
       fill-rule="evenodd"
     />
-    <path fill="#f0ac8a" fill-rule="evenodd" d="M178.84 84.52l-.04-.09-.02.24.06-.15" />
+    <path
+      fill="#f0ac8a"
+      fill-rule="evenodd"
+      d="M178.84 84.52l-.04-.09-.02.24.06-.15"
+    />
     <path
       d="M149.62 234.01c-32.41 0-49.4-10.59-58.13-26.09 5.74 22.14 20.78 38.81 58.11 38.81 38.11 0 52.85-16.16 58.32-37.56-8.61 14.76-25.51 24.84-58.3 24.84"
       fill="#efa987"
@@ -97,21 +105,21 @@ export default {
   name: 'Avatar',
   props: ['fill'],
   mounted() {
-    this.blink();
+    this.blink()
   },
   methods: {
     blink() {
-      const { leftEye, rightEye } = this.$refs;
+      const { leftEye, rightEye } = this.$refs
 
       setInterval(() => {
-        leftEye.classList.add('blink');
-        rightEye.classList.add('blink');
+        leftEye.classList.add('blink')
+        rightEye.classList.add('blink')
         setTimeout(() => {
-          leftEye.classList.remove('blink');
-          rightEye.classList.remove('blink');
-        }, 500);
-      }, 5000);
-    },
-  },
-};
+          leftEye.classList.remove('blink')
+          rightEye.classList.remove('blink')
+        }, 500)
+      }, 5000)
+    }
+  }
+}
 </script>
