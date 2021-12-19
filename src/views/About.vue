@@ -100,7 +100,9 @@ export default {
       }
     },
     downloadCV() {
-      const route = this.$router.resolve({ path: `${this.publicPath}${data.btn.cvPath}` });
+      const route = this.$router.resolve({
+        path: `${this.publicPath}${this.data.btn.cvPath}`,
+      });
       window.open(route.href, '_blank');
     },
     chunkArray(arr, n) {
