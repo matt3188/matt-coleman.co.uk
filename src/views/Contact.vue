@@ -9,7 +9,7 @@
           <h2>{{ data.subHeading }}</h2>
         </div>
         <div class="col-md-8">
-          <ContactForm :formData="data.form" />
+          <ContactForm :formData="data.formData" />
         </div>
       </div>
       <div class="row" v-else>
