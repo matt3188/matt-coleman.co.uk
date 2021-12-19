@@ -10,12 +10,12 @@ module.exports = {
   },
   css: {
     loaderOptions: {
-      sass: {
-        prependData: `
+      scss: {
+        additionalData: `
           @import '~bootstrap/scss/functions';
           @import '~bootstrap/scss/variables';
           @import '~bootstrap/scss/mixins';
-          @import "@/assets/scss/_variables.scss";
+          @import '@/assets/scss/_variables.scss';
         `,
       },
     },

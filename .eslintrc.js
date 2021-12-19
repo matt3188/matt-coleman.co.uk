@@ -8,8 +8,9 @@ module.exports = {
   extends: [
     'plugin:vue/essential',
     '@vue/airbnb',
-    "prettier/vue",
-    "plugin:prettier/recommended"
+    'prettier/vue',
+    'plugin:prettier/recommended',
+    '@vue/prettier',
   ],
 
   parserOptions: {
