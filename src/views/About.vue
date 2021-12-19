@@ -50,7 +50,7 @@
 <script>
 import types from '@/store/types';
 import data from '@/assets/data/site.json';
-import variables from '@/assets/scss/_variables.scss';
+import variables from '@/assets/scss/_exports.scss';
 import Button from '@/components/Button.vue';
 import SectionHeader from '@/components/SectionHeader.vue';
 import RoundedContainer from '@/components/RoundedContainer.vue';

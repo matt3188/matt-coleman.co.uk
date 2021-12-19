@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import variables from '@/assets/scss/_variables.scss';
+import variables from '@/assets/scss/_exports.scss';
 import SimpleSvgIcon from '@/components/SimpleSvgIcon.vue';
 import { GITHUB_URL, LINKEDIN_URL, STRAVA_URL } from '@/constants';
 

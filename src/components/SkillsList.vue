@@ -13,7 +13,7 @@
 
 <script>
 import SkillBar from '@/components/SkillBar.vue';
-import variables from '@/assets/scss/_variables.scss';
+import variables from '@/assets/scss/_exports.scss';
 
 export default {
   name: 'SkillsList',

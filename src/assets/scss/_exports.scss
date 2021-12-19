@@ -1,0 +1,19 @@
+@import './variables';
+
+// Exported to use with JS
+:export {
+  coral-red: $color-coral-red;
+  aubergine: $color-aubergine;
+  green: $color-green;
+  teal: $color-teal;
+  purple: $color-purple;
+  dark-purple: $color-dark-purple;
+  yellow: $color-yellow;
+  white: $color-white;
+  black: $color-black;
+  light-grey: $color-light-grey;
+  blue-grey: $color-blue-grey;
+  github: $github;
+  linkedin: $linkedin;
+  strava: $strava;
+}
