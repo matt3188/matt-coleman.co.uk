@@ -13,8 +13,9 @@ module.exports = {
     '@vue/prettier'
   ],
 
+
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: "vue-eslint-parser"
   },
 
   rules: {

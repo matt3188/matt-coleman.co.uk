@@ -1,7 +1,7 @@
 /**
  * Customised grid
  */
-@import '~bootstrap/scss/reboot';
+@use '~bootstrap/scss/bootstrap-reboot';
 
 .container {
   @include make-container();
