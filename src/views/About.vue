@@ -9,9 +9,7 @@
         <div class="col-md-8">
           <RoundedContainer hasArrow>
             <p v-for="(intro, index) in data.intro" :key="index">{{ intro }}</p>
-            <Button btnClass="btn__standard" :onClick="downloadCV">
-              {{ data.btn.label }}
-            </Button>
+            <DownloadCV />
           </RoundedContainer>
         </div>
       </div>
@@ -62,7 +60,7 @@
 import types from '@/store/types'
 import data from '@/assets/data/site.json'
 import variables from '@/assets/scss/_exports.scss'
-import Button from '@/components/Button.vue'
+import DownloadCV from '@/components/DownloadCV.vue'
 import SectionHeader from '@/components/SectionHeader.vue'
 import RoundedContainer from '@/components/RoundedContainer.vue'
 import SkillsList from '@/components/SkillsList.vue'
@@ -75,8 +73,8 @@ export default {
   name: 'About',
   components: {
     Avatar,
-    Button,
     RoundedContainer,
+    DownloadCV,
     SectionHeader,
     SkillsList,
     Timeline
@@ -94,7 +92,6 @@ export default {
   },
   data() {
     return {
-      publicPath: process.env.BASE_URL,
       splitExperiences: []
     }
   },
@@ -109,12 +106,6 @@ export default {
         this.fadeIn($ref1)
         $ref1.dataset.visible = true
       }
-    },
-    downloadCV() {
-      const route = this.$router.resolve({
-        path: `${this.publicPath}${this.data.btn.cvPath}`
-      })
-      window.open(route.href, '_blank')
     },
     chunkArray(arr, n) {
       const chunkLength = Math.max(arr.length / n, 1)
