@@ -1,6 +1,6 @@
 <template>
   <div class="hero-wrapper">
-    <Avatar fill="#ffd25f" width="200px" />
+    <Avatar width="200px" />
     <h2 class="name">{{ name }}</h2>
     <VueTypedJs
       :loop="true"

@@ -103,7 +103,12 @@
 <script>
 export default {
   name: 'Avatar',
-  props: ['fill'],
+  props: {
+    fill: {
+      type: String,
+      default: '#ffd25f'
+    }
+  },
   mounted() {
     this.blink()
   },

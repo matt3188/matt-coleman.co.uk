@@ -1,8 +1,8 @@
 <template>
   <div class="skill-bar-container">
     <div class="skill-labels">
-      <span class="title">{{ title }}</span
-      ><span class="skill-level">{{ skillLevel() }}</span>
+      <span class="title">{{ title }}</span>
+      <span class="skill-level">{{ skillLevel() }}</span>
     </div>
     <div class="skill-bar">
       <transition appear @before-enter="beforeEnter">
@@ -11,7 +11,7 @@
           :data-index="index"
           :style="`background-color: ${color}`"
           v-observe-visibility="visibilityOptions"
-        ></div>
+        />
       </transition>
     </div>
   </div>

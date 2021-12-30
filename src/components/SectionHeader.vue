@@ -1,7 +1,7 @@
 <template>
   <header class="section-header" :style="`text-align: ${alignment}`">
     <h2>{{ heading }}</h2>
-    <slot></slot>
+    <slot />
   </header>
 </template>
 

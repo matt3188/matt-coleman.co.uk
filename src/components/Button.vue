@@ -5,7 +5,7 @@
     :target="target"
     :type="type"
   >
-    <slot></slot>
+    <slot />
   </button>
 </template>
 
