@@ -2,7 +2,7 @@
   "pages": {
     "home": {
       "name": "Matt Coleman",
-      "btnLabel": "Hire me",
+      "btnLabel": "Contact me",
       "whatAmI": [
         "I'm a Front-end Developer",
         "I'm a cycling enthusiast",
@@ -22,8 +22,9 @@
       },
       "skills": [
         { "name": "HTML", "level": 90, "colour": "yellow" },
-        { "name": "CSS", "level": 90, "colour": "coral-red" },
-        { "name": "Javascript", "level": 85, "colour": "purple" }
+        { "name": "CSS/SASS", "level": 90, "colour": "coral-red" },
+        { "name": "Javascript", "level": 85, "colour": "purple" },
+        { "name": "Vue JS", "level": 85, "colour": "teal" }
       ],
       "headings": {
         "about": "About me",
