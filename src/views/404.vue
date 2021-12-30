@@ -14,7 +14,7 @@
 
 <script>
 import data from '@/assets/data/site.json'
-import SectionHeader from '@/components/SectionHeader.vue'
+import { SectionHeader } from '@/components'
 
 export default {
   beforeMount() {

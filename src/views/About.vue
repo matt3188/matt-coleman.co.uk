@@ -60,11 +60,13 @@
 import types from '@/store/types'
 import data from '@/assets/data/site.json'
 import variables from '@/assets/scss/_exports.scss'
-import DownloadCV from '@/components/DownloadCV.vue'
-import SectionHeader from '@/components/SectionHeader.vue'
-import RoundedContainer from '@/components/RoundedContainer.vue'
-import SkillsList from '@/components/SkillsList.vue'
-import Timeline from '@/components/Timeline.vue'
+import {
+  DownloadCV,
+  SectionHeader,
+  RoundedContainer,
+  SkillsList,
+  Timeline
+} from '@/components'
 import ViewportAnimations from '@/mixins'
 
 const Avatar = () => import('@/components/Avatar.vue')

@@ -6,7 +6,7 @@
 
 <script>
 import data from '@/assets/data/site.json'
-import Button from '@/components/Button.vue'
+import { Button } from '@/components'
 
 export default {
   name: 'DownloadCV',

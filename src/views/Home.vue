@@ -10,7 +10,7 @@
 
 <script>
 import data from '@/assets/data/site.json'
-import Hero from '@/components/Hero.vue'
+import { Hero } from '@/components'
 
 export default {
   name: 'Home',

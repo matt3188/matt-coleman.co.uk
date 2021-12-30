@@ -32,8 +32,7 @@
 
 <script>
 import data from '@/assets/data/site.json'
-import ContactForm from '@/components/ContactForm.vue'
-import SectionHeader from '@/components/SectionHeader.vue'
+import { ContactForm, SectionHeader } from '@/components'
 
 const AnimatedTick = () => import('@/components/AnimatedTick.vue')
 

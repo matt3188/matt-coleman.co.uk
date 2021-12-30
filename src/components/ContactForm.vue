@@ -39,8 +39,7 @@
 
 <script>
 import { ValidationObserver } from 'vee-validate'
-import Button from '@/components/Button.vue'
-import FormInput from '@/components/FormInput.vue'
+import { Button, FormInput } from '@/components'
 
 export default {
   name: 'ContactForm',

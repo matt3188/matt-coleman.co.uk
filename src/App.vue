@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Navigation from '@/components/Navigation.vue'
+import { Navigation } from '@/components'
 
 export default {
   name: 'App',

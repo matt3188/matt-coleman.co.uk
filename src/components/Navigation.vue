@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Routes from '@/components/Routes.vue'
+import { Routes } from '@/components'
 
 export default {
   name: 'Navigation',

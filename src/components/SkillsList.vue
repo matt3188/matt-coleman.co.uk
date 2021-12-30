@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import SkillBar from '@/components/SkillBar.vue'
+import { SkillBar } from '@/components'
 import variables from '@/assets/scss/_exports.scss'
 
 export default {

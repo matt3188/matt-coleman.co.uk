@@ -21,7 +21,7 @@
 
 <script>
 import variables from '@/assets/scss/_exports.scss'
-import SimpleSvgIcon from '@/components/SimpleSvgIcon.vue'
+import { SimpleSvgIcon } from '@/components'
 import { GITHUB_URL, LINKEDIN_URL, STRAVA_URL } from '@/constants'
 
 export default {

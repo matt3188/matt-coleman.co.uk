@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import Hero from '@/components/Hero.vue'
+import { Hero } from '@/components'
 
 describe('Hero.vue', () => {
   it('renders props.name when passed', () => {

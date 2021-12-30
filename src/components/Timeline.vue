@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Experience from '@/components/Experience.vue'
+import { Experience } from '@/components'
 
 export default {
   name: 'Timeline',
