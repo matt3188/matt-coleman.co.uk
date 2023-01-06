@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["Home-vue"],{bb51:function(e,t,a){"use strict";a.r(t);var n=function(){var e=this,t=e.$createElement,a=e._self._c||t;return a("div",{staticClass:"home"},[a("Hero",{attrs:{name:e.data.name,btnLabel:e.data.btnLabel,typedList:e.data.whatAmI}})],1)},o=[],s=a("0611"),l=a("2af9"),r={name:"Home",components:{Hero:l["g"]},beforeMount:function(){this.data=s.pages.home}},u=r,c=a("2877"),i=Object(c["a"])(u,n,o,!1,null,null,null);t["default"]=i.exports}}]);
+//# sourceMappingURL=Home-vue-legacy.d33d7279.js.map
